@@ -144,7 +144,7 @@ h3 {
 
 .thirdcolumn {
 	width: 25%;
-	height: 20em;
+	height: 22.5em;
 	overflow-y: auto;
 	float: left;
 	margin: 2%;
@@ -351,29 +351,6 @@ h3 {
 		width: 80%;
 		float: left;
 		margin: 1%;
-	}
-
-	nav {
-		float: right;
-		padding: 0px;
-	}
-
-	nav ul {
-		background: #DC0014;
-	}
-
-	nav ul li {
-		display: inline-block;
-		float: none;
-		text-decoration: none;
-		transition-duration: 0.5s;
-		padding: 0.25rem;
-		padding-left: 0px;
-		padding-right: 0px;
-	}
-
-	nav ul li a {
-		font-size: 10px;
 	}
 
 	.ressource {
