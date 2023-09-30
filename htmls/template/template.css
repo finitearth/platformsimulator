@@ -253,6 +253,27 @@ h3 {
 	display: none;
 }
 
+.grid-container {
+	display: grid;
+	width: 100%;
+	
+}
+
+.tech-pic {
+	grid-column: 1;
+}
+
+.tech-card {
+	grid-column: 2;
+}
+
+.tech-checkbox {
+	grid-column: 3;
+	width: 10%;
+}
+
+
+
 /*SMALL PC OR TABLET*/
 
 

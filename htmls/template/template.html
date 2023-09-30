@@ -81,6 +81,8 @@
 				</div>
 			</div>
 
+			<button id="generate">Code generieren</button>
+
 			<div class="clearfix">
 				<div class="thirdcolumn page-divider">
 					<h3>Plattform</h3>
@@ -95,7 +97,7 @@
 							Preisniveau
 						</div>
 						<div class="value">
-							%var01
+							<input class="inputfield" id="alignmentPrice" placeholder="%var01" value="%var01"></input>
 						</div>
 					</div>
 
@@ -109,7 +111,7 @@
 							Produktart
 						</div>
 						<div class="value">
-							%var02
+							<input class="inputfield" id="alignmentProduct" placeholder="%var02" value="%var02"></input>
 						</div>
 					</div>
 
@@ -123,7 +125,7 @@
 							Entwickler
 						</div>
 						<div class="value">
-							%var03
+							<input class="inputfield" id="coders" placeholder="%var03" value="%var03"></input>
 						</div>
 					</div>
 
@@ -137,7 +139,7 @@
 							Data Scientists
 						</div>
 						<div class="value">
-							%var04
+							<input class="inputfield" id="dataScientists" placeholder="%var04" value="%var04"></input>
 						</div>
 					</div>
 
@@ -151,7 +153,7 @@
 							Marketer
 						</div>
 						<div class="value">
-							%var05
+							<input class="inputfield" id="marketers" placeholder="%var05" value="%var05"></input>
 						</div>
 					</div>
 
@@ -165,7 +167,7 @@
 							Moderatoren
 						</div>
 						<div class="value">
-							%var06
+							<input class="inputfield" id="mods" placeholder="%var06" value="%var06"></input>
 						</div>
 					</div>
 
@@ -183,7 +185,7 @@
 							Anmeldegebühr
 						</div>
 						<div class="value">
-							%var07
+							<input class="inputfield" id="buyerPriceSign" placeholder="%var07" value="%var07"></input>
 						</div>
 					</div>
 
@@ -196,7 +198,7 @@
 							Abogebühr
 						</div>
 						<div class="value">
-							%var08
+							<input class="inputfield" id="buyerPriceSub" placeholder="%var08" value="%var08"></input>
 						</div>
 					</div>
 
@@ -210,7 +212,7 @@
 							Komission
 						</div>
 						<div class="value">
-							%var09
+							<input class="inputfield" id="buyerPriceComission" placeholder="%var09" value="%var09"></input>
 						</div>
 					</div>
 
@@ -224,7 +226,7 @@
 							Bannerwerbung
 						</div>
 						<div class="value">
-							%var10
+							<input class="inputfield" id="buyerAdActivityCPM" placeholder="%var10" value="%var10"></input>
 						</div>
 					</div>
 
@@ -238,7 +240,7 @@
 							PPC-Werbung
 						</div>
 						<div class="value">
-							%var11
+							<input class="inputfield" id="buyerAdActivityPPC" placeholder="%var11" value="%var11"></input>
 						</div>
 					</div>
 
@@ -252,7 +254,7 @@
 							Freemium
 						</div>
 						<div class="value">
-							%var12
+							<input class="inputfield" id="buyerFreemium" placeholder="%var12" value="%var12"></input>
 						</div>
 					</div>
 
@@ -270,7 +272,7 @@
 							Anmeldegebühr
 						</div>
 						<div class="value">
-							%var13
+							<input class="inputfield" id="sellerPriceSign" placeholder="%var13" value="%var13"></input>
 						</div>
 					</div>
 
@@ -283,7 +285,7 @@
 							Abogebühr
 						</div>
 						<div class="value">
-							%var14
+							<input class="inputfield" id="sellerPriceSub" placeholder="%var14" value="%var14"></input>
 						</div>
 					</div>
 
@@ -297,7 +299,7 @@
 							Komission
 						</div>
 						<div class="value">
-							%var15
+							<input class="inputfield" id="sellerPriceComission" placeholder="%var15" value="%var15"></input>
 						</div>
 					</div>
 
@@ -311,7 +313,7 @@
 							Bannerwerbung
 						</div>
 						<div class="value">
-							%var16
+							<input class="inputfield" id="sellerAdActivityCPM" placeholder="%var16" value="%var16"></input>
 						</div>
 					</div>
 
@@ -325,7 +327,7 @@
 							PPC-Werbung
 						</div>
 						<div class="value">
-							%var17
+							<input class="inputfield" id="sellerAdActivityPPC" placeholder="%var17" value="%var17"></input>
 						</div>
 					</div>
 
@@ -339,7 +341,7 @@
 							Freemium
 						</div>
 						<div class="value">
-							%var18
+							<input class="inputfield" id="sellerFreemium" placeholder="%var18" value="%var18"></input>
 						</div>
 					</div>
 
@@ -614,7 +616,6 @@
 
 				</div>
 
-
 				<div class="clearfix">
 					<div class="fullcolumn">
 						<img src="gfx/TechTree.png" alt="Plattform" width="100%">
@@ -622,6 +623,15 @@
 				</div>
 
 			</div>
+			<div class="grid-container">
+				<div class="tech-pic"><img src="gfx/techtree_0.png"></div>
+				<div class="tech-card">
+					UI/UX Optimierung [🪙50, <br> 
+					+25% intrinsischer Nutzen für Käufer und Verkäufer <br>
+					+5% Wahrscheinlichkeit einer zusätzlichen Transaktion</div>
+				<div class="tech-checkbox"><input type="checkbox" id="tech-uiux"></div>
+			</div>
+
 		</div>
 
 	</main>
@@ -633,6 +643,7 @@
 			<a href="dsgvo.html" style="color:#FFFFFF;">Datenschutz</a>
 		</div>
 	</footer>
+	<script src="../../js/generator.js"></script>
 </body>
 
 </html>
