@@ -1,20 +1,25 @@
 
 // add an event listener to the button with id generate and call the function generateCode
 let vars = [
-    "alignmentPrice", ]
-//     "alignmentProduct", 
-//     "sellerPriceSign",
-//     "sellerPriceSub", 
-//     "sellerPriceComission",
-//     "buyerPriceComission",
-//     "buyerAdActivityCPM", 
-//     "buyerAdActivityPPC",
-//     "sellerAdActivityCPM",
-//     "sellerAdActivityPPC",
-//     "coders",
-//     "marketers",
-//     "dataScientists"
-// ];
+    "alignmentPrice",
+    "alignmentProduct", 
+    "coders",
+    "dataScientists",
+    "marketers",
+    "mods",
+    "buyerPriceSign",
+    "buyerPriceSub",
+    "buyerPriceComission",
+    "buyerAdActivityCPM", 
+    "buyerAdActivityPPC",
+    "buyerFreemium",
+    "sellerPriceSign",
+    "sellerPriceSub", 
+    "sellerPriceComission",
+    "sellerAdActivityCPM",
+    "sellerAdActivityPPC",
+    "sellerFreemium"
+];
 
 document.getElementById("generate").addEventListener("click", () => {
     let varValues = vars.map((varName) => document.getElementById(varName).value)
