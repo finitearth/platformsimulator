@@ -30,8 +30,17 @@ function generateCode(varNames, varValues) {
         generatedCode += `target.${varNames[i]}  = ${varValues[i]};\n`;
     }
 
-    eventDecision = 0// document.getElementById("eventDecisions").value;
-    generatedCode += `target.eventDecisions[turn]=" ${eventDecision} ";\n`;
+    eventDecision = document.getElementById("eventDecision").value;
+
+    // if the event decision is not empty map a to 1, b to 2 and so on
+    if (eventDecision != "") {
+        eventDecision = eventDecision.charCodeAt(0) - 96;
+    } else {
+        alert("Please enter an event decision");
+        return;
+    }
+
+    generatedCode += `target.eventDecisions[turn]=${eventDecision};\n`;
 
     let techDecision = getTechDecision();
     techDecision.forEach((decision) => {
@@ -63,5 +72,4 @@ document.getElementById("generate").addEventListener("click", () => {
     console.log(typeof generateCode);
     let varValues = vars.map((varName) => document.getElementById(varName).value)
     generateCode(vars, varValues);
-    // popo up
 });
