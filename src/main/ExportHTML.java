@@ -3,8 +3,11 @@ package main;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintStream;
+import java.nio.file.Files;
+import java.nio.file.StandardCopyOption;
 import java.util.LinkedList;
 
 import model.Division;
@@ -208,6 +211,15 @@ public class ExportHTML {
 					rff.close();
 					wif.close();
 					
+				}
+
+				// copy the template.css file to the export folder and overwrite the existing file
+				File source = new File(path + "/htmls/template/template.css");
+				File dest = new File(path + "/htmls/export/template.css");
+				try {
+					Files.copy(source.toPath(), dest.toPath(), StandardCopyOption.REPLACE_EXISTING);
+				} catch (IOException e) {
+					e.printStackTrace();
 				}
 			}
 			
