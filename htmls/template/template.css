@@ -3,6 +3,7 @@
 /* Define variables */
 :root {
     --primary-color: #E1061C;
+	--primary-color-effect: #d80d22;
 	--primary-color-dark: #8d0613;
 	--background-color: #ECEDF0;
 	--footer-color: #2B2B2B;
@@ -62,7 +63,6 @@ footer {
 }
 
 /* Table Style*/
-
 table {
 	width: 100%;
 }
@@ -83,8 +83,11 @@ tr {
 }
 
 .adjustToCenter {
-	margin-left: 10%;
-	margin-right: 10%;
+	flex-wrap: wrap;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0% 10%;
 }
 
 h1 {
@@ -115,9 +118,38 @@ h3 {
 	clear: both;
 }
 
+input {
+	width: 60px;
+	height: 30px;
+	padding: 0 5px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+}
+
+button {
+	color: white;
+	background-color: var(--primary-color);
+	box-shadow: 0 4px 8px rgb(0, 0, 0, 0.2);
+    border: none;
+    border-radius: 0.3em;
+    height: 3em;
+    margin: 0.5em;
+	font-size: 14pt;
+}
+
+button:hover {
+    cursor: pointer;
+	background-color: var(--primary-color-effect);
+}
+
+button:active {
+    transform: translateY(1px);
+}
+
 .fullcolumn {
 	color: #000000;
-	width: 96%;
+	/* width: 96%; */
 	float: left;
 	margin: 2%;
 	text-align: justify;
@@ -322,7 +354,7 @@ h3 {
 
 	.fullcolumn {
 		color: #000000;
-		width: 94%;
+		/* width: 94%; */
 		float: left;
 		margin: 1%;
 		margin-bottom: 3%;
@@ -368,7 +400,7 @@ h3 {
 
 	.fullcolumn {
 		color: #000000;
-		width: 94%;
+		/* width: 94%; */
 		float: left;
 		margin: 1%;
 		margin-bottom: 3%;
