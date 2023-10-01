@@ -255,6 +255,7 @@ h3 {
 
 .grid-container {
 	display: grid;
+	grid-template-columns: 20% 70% 10%;
 	width: 100%;
 	
 }
@@ -264,15 +265,29 @@ h3 {
 }
 
 .tech-card {
+	margin-top: auto;
+	margin-bottom: auto;
 	grid-column: 2;
 }
 
 .tech-checkbox {
+	margin-top: auto;
+	margin-bottom: auto;
 	grid-column: 3;
 	width: 10%;
 }
 
+.iconInline {
+	display:inline;
+	width: 12px;
+}
 
+.iconTech {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 60%;
+}
 
 /*SMALL PC OR TABLET*/
 
