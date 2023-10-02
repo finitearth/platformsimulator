@@ -13,6 +13,7 @@ import java.util.LinkedList;
 import model.Division;
 import model.GameState;
 import model.Player;
+import model.Tech;
 
 /**
  * The ExportHTML class uses the templates in "/htmls/template/" to represent the current
@@ -203,11 +204,21 @@ public class ExportHTML {
 						line=line.replace("%var42", round(100*player.reputation,1)+"%");						
 						line=line.replace("%var43", String.valueOf(player.transactions));		
 						line=line.replace("%var44", String.valueOf(division.getTurn())+"/8");	
+
+						LinkedList<Tech> techs = player.getTechs();
+
+						for (Tech t: techs) {
+							if(t.isActive()) {
+								line=line.replace("\"techDecision"+t.getId() +"\"", "\"techDecision"+t.getId() +"\" disabled checked");
+							}
+						}
+
+
 						
 						wif.println(line);
 						line=rff.readLine();
 					}
-					
+
 					rff.close();
 					wif.close();
 					
