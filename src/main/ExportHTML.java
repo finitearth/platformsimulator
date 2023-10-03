@@ -3,13 +3,17 @@ package main;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintStream;
+import java.nio.file.Files;
+import java.nio.file.StandardCopyOption;
 import java.util.LinkedList;
 
 import model.Division;
 import model.GameState;
 import model.Player;
+import model.Tech;
 
 /**
  * The ExportHTML class uses the templates in "/htmls/template/" to represent the current
@@ -200,14 +204,33 @@ public class ExportHTML {
 						line=line.replace("%var42", round(100*player.reputation,1)+"%");						
 						line=line.replace("%var43", String.valueOf(player.transactions));		
 						line=line.replace("%var44", String.valueOf(division.getTurn())+"/8");	
+
+						LinkedList<Tech> techs = player.getTechs();
+
+						for (Tech t: techs) {
+							if(t.isActive()) {
+								line=line.replace("\"techDecision"+t.getId() +"\"", "\"techDecision"+t.getId() +"\" disabled checked");
+							}
+						}
+
+
 						
 						wif.println(line);
 						line=rff.readLine();
 					}
-					
+
 					rff.close();
 					wif.close();
 					
+				}
+
+				// copy the template.css file to the export folder and overwrite the existing file
+				File source = new File(path + "/htmls/template/template.css");
+				File dest = new File(path + "/htmls/export/template.css");
+				try {
+					Files.copy(source.toPath(), dest.toPath(), StandardCopyOption.REPLACE_EXISTING);
+				} catch (IOException e) {
+					e.printStackTrace();
 				}
 			}
 			

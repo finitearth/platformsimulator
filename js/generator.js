@@ -21,9 +21,6 @@ let vars = [
     "sellerFreemium"
 ];
 
-
-
-
 function generateCode(varNames, varValues) {
     let generatedCode = "";
     for (let i = 0; i < varNames.length; i++) {
@@ -35,13 +32,12 @@ function generateCode(varNames, varValues) {
     // if the event decision is not empty map a to 1, b to 2 and so on
     if (eventDecision != "") {
         eventDecision = eventDecision.charCodeAt(0) - 96;
+        generatedCode += `target.eventDecisions[turn]=${eventDecision};\n`;
     } else {
-        alert("Please enter an event decision");
-        return;
+        alert("Note: You did not specify an event decision.");
     }
 
-    generatedCode += `target.eventDecisions[turn]=${eventDecision};\n`;
-
+    // get the tech decisions
     let techDecision = getTechDecision();
     techDecision.forEach((decision) => {
         generatedCode += `target.getTechs().get(${decision}).research();\n`;
@@ -61,7 +57,7 @@ function generateCode(varNames, varValues) {
 function getTechDecision() {
     let techDecision = [];
     for (let i = 0; i <= 28; i++) {
-        if (document.getElementById("techDecision" + i).checked){
+        if (document.getElementById("techDecision" + i).checked && !document.getElementById("techDecision" + i).disabled){
             techDecision.push(i);
         }
     }

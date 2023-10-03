@@ -328,41 +328,41 @@ public class TechTree {
 	 */
 	public void createTechTree(Player player) {
 		
-		new Tech(player,"UI/UX Optimierung",50,100,0,0);		// 0
-		new Tech(player,"Seller Insights",0,100,0,50);	
-		new Tech(player,"Advertiser Insights",0,100,0,50);	
-		new Tech(player,"Nudges",35,0,0,15);	
-		new Tech(player,"Massen AB-Test",75,150,0,0);
-		new Tech(player,"Personalisierete UI",250,0,0,50);
+		new Tech(player,0, "UI/UX Optimierung",50,100,0,0);		// 0
+		new Tech(player,1,"Seller Insights",0,100,0,50);	
+		new Tech(player,2,"Advertiser Insights",0,100,0,50);	
+		new Tech(player,3,"Nudges",35,0,0,15);	
+		new Tech(player,4,"Massen AB-Test",75,150,0,0);
+		new Tech(player,5,"Personalisierete UI",250,0,0,50);
 		
-		new Tech(player,"Backend Optimierung",25,75,0,0); 		// 6
-		new Tech(player,"APIs",0,100,0,0);
-		new Tech(player,"Datenbankoptimierung",35,80,0,0);
-		new Tech(player,"Tracking",0,100,0,0);
-		new Tech(player,"Off-Site Tracking",0,150,0,0);
-		new Tech(player,"Machine Learning",100,100,100,0);
-		new Tech(player,"Content-Based Algorithmen",0,300,0,150);
-		new Tech(player,"Collaborative Filter Algorithmen",0,300,0,150);
+		new Tech(player,6,"Backend Optimierung",25,75,0,0); 		// 6
+		new Tech(player,7,"APIs",0,100,0,0);
+		new Tech(player,8,"Datenbankoptimierung",35,80,0,0);
+		new Tech(player,9,"Tracking",0,100,0,0);
+		new Tech(player,10,"Off-Site Tracking",0,150,0,0);
+		new Tech(player,11,"Machine Learning",100,100,100,0);
+		new Tech(player,12,"Content-Based Algorithmen",0,300,0,150);
+		new Tech(player,13,"Collaborative Filter Algorithmen",0,300,0,150);
 		
-		new Tech(player,"Optimierte Suchfunktion",0,35,0,0); 	// 14
-		new Tech(player,"Personalisierte Suche",0,0,0,100);
+		new Tech(player,14,"Optimierte Suchfunktion",0,35,0,0); 	// 14
+		new Tech(player,15,"Personalisierte Suche",0,0,0,100);
 
-		new Tech(player,"Recommender",0,50,0,50);				// 16
-		new Tech(player,"Vergleichsansichten",0,150,0,0);		
+		new Tech(player,16,"Recommender",0,50,0,50);				// 16
+		new Tech(player,17,"Vergleichsansichten",0,150,0,0);		
 		
-		new Tech(player,"Bewertungssystem",0,100,0,0);			// 18
-		new Tech(player,"NLP Technologie",0,150,0,0);
-		new Tech(player,"Reminder",50,50,0,0);
+		new Tech(player,18,"Bewertungssystem",0,100,0,0);			// 18
+		new Tech(player,19,"NLP Technologie",0,150,0,0);
+		new Tech(player,20,"Reminder",50,50,0,0);
 		
-		new Tech(player,"Moderierte Transaktionen",0,50,0,0);	// 21
-		new Tech(player,"Logistikunterstüztung",25,75,0,0);
-		new Tech(player,"SEPA Mandate",75,25,0,0);
-		new Tech(player,"Online Payment",100,200,0,0);
+		new Tech(player,21,"Moderierte Transaktionen",0,50,0,0);	// 21
+		new Tech(player,22,"Logistikunterstüztung",25,75,0,0);
+		new Tech(player,23,"SEPA Mandate",75,25,0,0);
+		new Tech(player,24,"Online Payment",100,200,0,0);
 		
-		new Tech(player,"FAQ & Guidelines",50,0,0,0); 			// 25
-		new Tech(player,"Tutorials",75,25,0,0);
-		new Tech(player,"Zertifizierung",150,50,0,0);
-		new Tech(player,"Community Mitarbeiter",200,0,0,0);
+		new Tech(player,25,"FAQ & Guidelines",50,0,0,0); 			// 25
+		new Tech(player,26,"Tutorials",75,25,0,0);
+		new Tech(player,27,"Zertifizierung",150,50,0,0);
+		new Tech(player,28,"Community Mitarbeiter",200,0,0,0);
 		
 	}
 	
