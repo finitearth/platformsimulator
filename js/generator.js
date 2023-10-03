@@ -73,3 +73,16 @@ document.getElementById("generate").addEventListener("click", () => {
     let varValues = vars.map((varName) => document.getElementById(varName).value)
     generateCode(vars, varValues);
 });
+
+
+document.getElementById('alignmentPrice').addEventListener('input', function() {
+    var inputValue = this.value;
+    // if inputVaulue is a number set inputValue to true
+    var isValid = !isNaN(inputValue) && !isNaN(parseFloat(inputValue));
+    
+    if (isValid) {
+      this.classList.remove('is-invalid');
+    } else {
+      this.classList.add('is-invalid');
+    }
+  });
