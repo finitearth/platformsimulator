@@ -3,10 +3,33 @@
 /* Define variables */
 :root {
     --primary-color: #E1061C;
+	--primary-color-transparent-90: #EE727F;
+	--primary-color-transparent-70: #F2929B;
+	--primary-color-transparent-50: #F6B1B8;
+	--primary-color-transparent-30: #F9D0D4;
+	--primary-color-light: #FF4D5A;
 	--primary-color-effect: #d80d22;
 	--primary-color-dark: #8d0613;
 	--background-color: #ECEDF0;
 	--footer-color: #2B2B2B;
+
+	--tech-tree-image-width: 90px;
+}
+
+@media(max-width:768px) {
+
+	:root {
+		--tech-tree-image-width: 70px;
+	}
+
+}
+
+@media(max-width:576px) {
+
+	:root {
+		--tech-tree-image-width: 50px;
+	}
+
 }
 
 /* General */
@@ -64,6 +87,11 @@ nav {
 	padding-bottom: 10px;
 	width: 100%;
 	z-index: 8;
+}
+
+/* Main */
+main {
+	margin: 0 5%;
 }
 
 .ressource {
@@ -159,12 +187,17 @@ h3 {
 }
 
 input {
-	width: 60px;
+	width: 75px;
 	height: 30px;
 	padding: 0 5px;
 	border: 1px solid #ccc;
 	border-radius: 4px;
 	box-sizing: border-box;
+}
+
+input[type=checkbox] {
+	width: 30px;
+	height: 30px;
 }
 
 button {
@@ -175,7 +208,6 @@ button {
     border-radius: 0.3em;
     height: 3em;
     margin: 0.5em;
-	font-size: 14pt;
 }
 
 button:hover {
@@ -185,6 +217,12 @@ button:hover {
 
 button:active {
     transform: translateY(1px);
+}
+
+.button-container {
+	display: flex;
+	justify-content: center;
+	margin: 1em;
 }
 
 .fullcolumn {
@@ -320,26 +358,34 @@ button:active {
 
 .grid-container {
 	display: grid;
-	grid-template-columns: 20% 70% 10%;
+	grid-template-columns: calc(3*var(--tech-tree-image-width)) max(72.5%, 400px) 50px;
 	width: 100%;
-	
 }
 
 .tech-pic {
 	grid-column: 1;
+	border-bottom-left-radius: 8px;
+	border-top-left-radius: 8px;
+}
+
+.tech-pic > img {
+	border-radius: 8px;
 }
 
 .tech-card {
-	margin-top: auto;
-	margin-bottom: auto;
+	padding-left: 1em;
 	grid-column: 2;
+	height: 100%;
 }
 
 .tech-checkbox {
-	margin-top: auto;
-	margin-bottom: auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
 	grid-column: 3;
-	width: 10%;
+	border-bottom-right-radius: 8px;
+	border-top-right-radius: 8px;
 }
 
 .iconInline {
@@ -349,10 +395,68 @@ button:active {
 
 .iconTech {
 	display: block;
-	margin-left: auto;
-	margin-right: auto;
-	width: 60%;
+	width: var(--tech-tree-image-width);
 }
+
+.tree-stage2{
+	padding-left: var(--tech-tree-image-width);
+	content: "";
+	background-image: url("gfx/tree-stage2.png");
+	background-repeat: no-repeat;
+    background-size: var(--tech-tree-image-width) 100%;
+}
+
+.tree-stage2-end{
+	padding-left: var(--tech-tree-image-width);
+	content: "";
+	background-image: url("gfx/tree-stage2-end.png");
+	background-repeat: no-repeat;
+    background-size: var(--tech-tree-image-width) 100%;
+}
+
+.tree-stage3{
+	padding-left: calc(2*var(--tech-tree-image-width));
+	content: "";
+	background-image: url("gfx/tree-stage3.png");
+	background-repeat: no-repeat;
+    background-size: calc(2*var(--tech-tree-image-width)) 100%;
+}
+
+.tree-stage3-end{
+	padding-left: calc(2*var(--tech-tree-image-width));
+	content: "";
+	background-image: url("gfx/tree-stage3-end.png");
+	background-repeat: no-repeat;
+    background-size: calc(2*var(--tech-tree-image-width)) 100%;
+}
+
+.tree-stage3-end-line{
+	padding-left: calc(2*var(--tech-tree-image-width));
+	content: "";
+	background-image: url("gfx/tree-stage3-end-line.png");
+	background-repeat: no-repeat;
+    background-size: calc(2*var(--tech-tree-image-width)) 100%;
+}
+
+.stage-1 {
+	background-color: var(--primary-color-transparent-70);
+	border-bottom: 2px solid white;
+}
+
+.stage-2 {
+	background-color: var(--primary-color-transparent-50);
+	border-bottom: 2px solid white;
+}
+
+.stage-3 {
+	background-color: var(--primary-color-transparent-30);
+	border-bottom: 2px solid white;
+}
+
+.stage-1:hover, .stage-2:hover, .stage-3:hover {
+	background-color: var(--primary-color-transparent-90);
+}
+
 
 @media(max-width:768px) {
 
@@ -362,10 +466,6 @@ button:active {
 
 	h2 {
 		font-size: 22px;
-	}
-
-	h3 {
-		font-size: 14px;
 	}
 
 	.logo {
@@ -384,10 +484,6 @@ button:active {
 
 	h2 {
 		font-size: 18px;
-	}
-
-	h3 {
-		font-size: 14px;
 	}
 
 	.logo {
