@@ -30,11 +30,13 @@ function generateCode(varNames, varValues) {
     eventDecision = document.getElementById("eventDecision").value;
 
     // if the event decision is not empty map a to 1, b to 2 and so on
-    if (eventDecision != "") {
+    // match if lower case letter is between a and z and only one char
+    if (eventDecision.match(/[a-z]{1}/i)) {
         eventDecision = eventDecision.charCodeAt(0) - 96;
         generatedCode += `target.eventDecisions[turn]=${eventDecision};\n`;
     } else {
-        alert("Note: You did not specify an event decision.");
+        alert("Note: You did not specify the event decision correctly.");
+        throw Error("Error 001");
     }
 
     // get the tech decisions
@@ -45,8 +47,10 @@ function generateCode(varNames, varValues) {
 
     // automatically download the code as txt file
     let element = document.createElement('a');
-    element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(generatedCode));
-    element.setAttribute('download', "generatedCode.txt");
+    // element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(generatedCode));
+    // element.setAttribute('download', "generatedCode.txt");
+    element.setAttribute('href', 'mailto:blochinger@blochy.bloch?subject=Entscheidungen&body=' + encodeURIComponent(generatedCode));
+    element.setAttribute('target', "_blank");
     element.style.display = 'none';
     document.body.appendChild(element);
     element.click();
