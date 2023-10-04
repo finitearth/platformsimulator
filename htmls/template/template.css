@@ -172,6 +172,11 @@ p {
 	font-size: 17px;
 }
 
+iframe {
+	border-radius: 8px;
+	border: 1px solid #d3d3d3;
+}
+
 h2 {
 	color: #FFFFFF;
 	font-size: 24px;
