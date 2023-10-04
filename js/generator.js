@@ -2,7 +2,7 @@
 // add an event listener to the button with id generate and call the function generateCode
 let vars = [
     "alignmentPrice",
-    "alignmentProduct", 
+    "alignmentProduct",
     "coders",
     "dataScientists",
     "marketers",
@@ -10,11 +10,11 @@ let vars = [
     "buyerPriceSign",
     "buyerPriceSub",
     "buyerPriceComission",
-    "buyerAdActivityCPM", 
+    "buyerAdActivityCPM",
     "buyerAdActivityPPC",
     "buyerFreemium",
     "sellerPriceSign",
-    "sellerPriceSub", 
+    "sellerPriceSub",
     "sellerPriceComission",
     "sellerAdActivityCPM",
     "sellerAdActivityPPC",
@@ -30,11 +30,13 @@ function generateCode(varNames, varValues) {
     eventDecision = document.getElementById("eventDecision").value;
 
     // if the event decision is not empty map a to 1, b to 2 and so on
-    if (eventDecision != "") {
+    // match if lower case letter is between a and z and only one char
+    if (eventDecision.match(/[a-z]{1}/i)) {
         eventDecision = eventDecision.charCodeAt(0) - 96;
         generatedCode += `target.eventDecisions[turn]=${eventDecision};\n`;
     } else {
-        alert("Note: You did not specify an event decision.");
+        alert("Note: You did not specify the event decision correctly.");
+        throw Error("Error 001");
     }
 
     // get the tech decisions
@@ -45,8 +47,10 @@ function generateCode(varNames, varValues) {
 
     // automatically download the code as txt file
     let element = document.createElement('a');
-    element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(generatedCode));
-    element.setAttribute('download', "generatedCode.txt");
+    // element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(generatedCode));
+    // element.setAttribute('download', "generatedCode.txt");
+    element.setAttribute('href', 'mailto:blochinger@blochy.bloch?subject=Entscheidungen&body=' + encodeURIComponent(generatedCode));
+    element.setAttribute('target', "_blank");
     element.style.display = 'none';
     document.body.appendChild(element);
     element.click();
@@ -57,7 +61,7 @@ function generateCode(varNames, varValues) {
 function getTechDecision() {
     let techDecision = [];
     for (let i = 0; i <= 28; i++) {
-        if (document.getElementById("techDecision" + i).checked && !document.getElementById("techDecision" + i).disabled){
+        if (document.getElementById("techDecision" + i).checked && !document.getElementById("techDecision" + i).disabled) {
             techDecision.push(i);
         }
     }
@@ -65,20 +69,21 @@ function getTechDecision() {
 }
 
 document.getElementById("generate").addEventListener("click", () => {
-    console.log(typeof generateCode);
     let varValues = vars.map((varName) => document.getElementById(varName).value)
     generateCode(vars, varValues);
 });
 
 
-document.getElementById('alignmentPrice').addEventListener('input', function() {
-    var inputValue = this.value;
-    // if inputVaulue is a number set inputValue to true
-    var isValid = !isNaN(inputValue) && !isNaN(parseFloat(inputValue));
-    
-    if (isValid) {
-      this.classList.remove('is-invalid');
-    } else {
-      this.classList.add('is-invalid');
-    }
-  });
+vars.forEach(v => {
+    document.getElementById(v).addEventListener('input', function () {
+        var inputValue = this.value;
+        // if inputVaulue is a number set inputValue to true
+        var isValid = !isNaN(inputValue) && !isNaN(parseFloat(inputValue));
+
+        if (isValid) {
+            this.classList.remove('is-invalid');
+        } else {
+            this.classList.add('is-invalid');
+        }
+    });
+});
