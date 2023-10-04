@@ -71,7 +71,9 @@ document.getElementById("generate").addEventListener("click", () => {
 });
 
 
-document.getElementById('alignmentPrice').addEventListener('input', function() {
+vars.forEach(v => {
+    console.log(v)
+document.getElementById(v).addEventListener('input', function() {
     var inputValue = this.value;
     // if inputVaulue is a number set inputValue to true
     var isValid = !isNaN(inputValue) && !isNaN(parseFloat(inputValue));
@@ -82,3 +84,4 @@ document.getElementById('alignmentPrice').addEventListener('input', function() {
       this.classList.add('is-invalid');
     }
   });
+});
