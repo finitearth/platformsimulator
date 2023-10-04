@@ -2,7 +2,7 @@
 // add an event listener to the button with id generate and call the function generateCode
 let vars = [
     "alignmentPrice",
-    "alignmentProduct", 
+    "alignmentProduct",
     "coders",
     "dataScientists",
     "marketers",
@@ -10,11 +10,11 @@ let vars = [
     "buyerPriceSign",
     "buyerPriceSub",
     "buyerPriceComission",
-    "buyerAdActivityCPM", 
+    "buyerAdActivityCPM",
     "buyerAdActivityPPC",
     "buyerFreemium",
     "sellerPriceSign",
-    "sellerPriceSub", 
+    "sellerPriceSub",
     "sellerPriceComission",
     "sellerAdActivityCPM",
     "sellerAdActivityPPC",
@@ -57,7 +57,7 @@ function generateCode(varNames, varValues) {
 function getTechDecision() {
     let techDecision = [];
     for (let i = 0; i <= 28; i++) {
-        if (document.getElementById("techDecision" + i).checked && !document.getElementById("techDecision" + i).disabled){
+        if (document.getElementById("techDecision" + i).checked && !document.getElementById("techDecision" + i).disabled) {
             techDecision.push(i);
         }
     }
@@ -65,23 +65,21 @@ function getTechDecision() {
 }
 
 document.getElementById("generate").addEventListener("click", () => {
-    console.log(typeof generateCode);
     let varValues = vars.map((varName) => document.getElementById(varName).value)
     generateCode(vars, varValues);
 });
 
 
 vars.forEach(v => {
-    console.log(v)
-document.getElementById(v).addEventListener('input', function() {
-    var inputValue = this.value;
-    // if inputVaulue is a number set inputValue to true
-    var isValid = !isNaN(inputValue) && !isNaN(parseFloat(inputValue));
-    
-    if (isValid) {
-      this.classList.remove('is-invalid');
-    } else {
-      this.classList.add('is-invalid');
-    }
-  });
+    document.getElementById(v).addEventListener('input', function () {
+        var inputValue = this.value;
+        // if inputVaulue is a number set inputValue to true
+        var isValid = !isNaN(inputValue) && !isNaN(parseFloat(inputValue));
+
+        if (isValid) {
+            this.classList.remove('is-invalid');
+        } else {
+            this.classList.add('is-invalid');
+        }
+    });
 });
