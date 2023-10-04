@@ -4,6 +4,7 @@
 <head>
 
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="Template für Plattform Simulator">
 	<meta name="keywords" content="Digitale Plattformen">
 	<meta name="author" content="Prof. Dr. Daniel Blochinger - DHBW Ravensburg">
@@ -11,7 +12,7 @@
 
 	<title>Plattform Simulator - Template</title>
 	<link rel="icon" href="gfx/MainLogo.png" type="image/x-icon" />
-	<link rel="stylesheet" href="bootstrap-5.0.2-dist/css/bootstrap.css"/>
+	<link rel="stylesheet" href="bootstrap-5.0.2-dist/css/bootstrap.css" />
 	<link rel="stylesheet" href="template.css">
 	<script src="bootstrap-5.0.2-dist/js/bootstrap.js"></script>
 
@@ -19,60 +20,80 @@
 
 <body>
 	<header>
-		<div class="adjustToCenter clearfix">
-			<div class="logocolumn">
-				<a href="ranking.html"><img class="logo" src="gfx/MainLogo.png" alt="Plattform Simulator Logo"></a>
+		<div class="container">
+			<div class="logo-container">
+					<a href="ranking.html"><img class="logo" src="gfx/MainLogo.png" alt="Plattform Simulator Logo"></a>
 			</div>
-			<div class="titlecolumn">
-				<h1>Digitale Plattformen - Simulation</h1>
-				<h2>Spielername</h2>
+			<div class="title-container">
+				<div class="title">
+					<h1>Digitale Plattformen - Simulation</h1>
+					<h2>Spielername</h2>
+				</div>
 			</div>
 		</div>
 	</header>
 
 	<nav>
-		<div class="adjustToCenter clearfix">
-			<div class="ressource"><img src="gfx/Gold.png" alt="Gold"
-					title="Liquide Mittel in Tausend Euro. Einnahmemöglichkeiten sind Gebühren und Komissionen für Käufer bzw. Verkäufer, das Schalten von Werbung und ggf. auch der Verkauf von Daten. Ausgabemöglichkeiten sind Personal, Forschung und Entwicklung, sowie negative Anmeldegebühren (SignUp Bonus)"
-					width="55%"></div>
-			<div class="smallText">%var36</div>
-			<div class="ressource"><img src="gfx/Code.png" alt="Code"
-					title="Quellcode wird durch Entwickler erzeugt und für Forschung und Entwicklung eingesetzt"
-					width="55%"></div>
-			<div class="smallText">%var37</div>
-			<div class="ressource"><img src="gfx/Data.png" alt="Data"
-					title="Daten sind das Öl des 21. Jahrhunderts - in unverarbeitetem Zustand kaum was Wert. Rohdaten werden durch Aktivität der Nutzer auf eurer Plattform erzeugt, müssen jedoch verarbeitet werden um nützlich zu werden."
-					width="55%"></div>
-			<div class="smallText">%var38</div>
-			<div class="ressource"><img src="gfx/Insight.png" alt="Insight"
-					title="Verarbeitete Daten verbessern die Attraktivität der Plattform und werden auch für Forschung und Entwicklung eingesetzt."
-					width="55%"></div>
-			<div class="smallText">%var39</div>
-
-			<div class="largeText">&nbsp;</div>
-			<div class="breaker">
-				<div class="clearfix"><br>&nbsp;</div>
+		<div class="container-fluid">
+			<div class="row justify-content-xl-center">
+				<div class="col col-xl-1 col-lg-2 col-md-3 col-sm-4 col-6">
+					<div class="ressource">
+						<img src="gfx/Gold.png" alt="Gold"
+							title="Liquide Mittel in Tausend Euro. Einnahmemöglichkeiten sind Gebühren und Komissionen für Käufer bzw. Verkäufer, das Schalten von Werbung und ggf. auch der Verkauf von Daten. Ausgabemöglichkeiten sind Personal, Forschung und Entwicklung, sowie negative Anmeldegebühren (SignUp Bonus)">
+					</div>
+					<div class="smallText">%var36</div>
+				</div>
+				<div class="col col-xl-1 col-lg-2 col-md-3 col-sm-4 col-6">
+					<div class="ressource">
+						<img src="gfx/Code.png" alt="Code"
+							title="Quellcode wird durch Entwickler erzeugt und für Forschung und Entwicklung eingesetzt">
+					</div>
+					<div class="smallText">%var37</div>
+				</div>
+				<div class="col col-xl-1 col-lg-2 col-md-3 col-sm-4 col-6">
+					<div class="ressource"><img src="gfx/Data.png" alt="Data"
+							title="Daten sind das Öl des 21. Jahrhunderts - in unverarbeitetem Zustand kaum was Wert. Rohdaten werden durch Aktivität der Nutzer auf eurer Plattform erzeugt, müssen jedoch verarbeitet werden um nützlich zu werden.">
+					</div>
+					<div class="smallText">%var38</div>
+				</div>
+				<div class="col col-xl-1 col-lg-2 col-md-3 col-sm-4 col-6">
+					<div class="ressource"><img src="gfx/Insight.png" alt="Insight"
+							title="Verarbeitete Daten verbessern die Attraktivität der Plattform und werden auch für Forschung und Entwicklung eingesetzt.">
+					</div>
+					<div class="smallText">%var39</div>
+				</div>
+				<div class="col col-xl-1 col-lg-2 col-md-3 col-sm-4 col-6">
+					<div class="ressource"><img src="gfx/PopBuyers.png" alt="Buyers"
+							title="Anzahl der Käufer auf eurer Plattform vs. die maximale Anzahl an Käufern welche auf der Plattform effizient interagieren können. Ab 100% Belegung nimmt die Effizienz ab, ab 200% Belegung sind keine weiteren Registrierungen mehr möglich.">
+					</div>
+					<div class="largeText">%var40</div>
+				</div>
+				<div class="col col-xl-1 col-lg-2 col-md-3 col-sm-4 col-6">
+					<div class="ressource"><img src="gfx/PopSellers.png" alt="Sellers"
+							title="Anzahl der Verkäufer auf eurer Plattform vs. die maximale Anzahl an Verkäufern welche auf der Plattform effizient interagieren können. Ab 100% Belegung nimmt die Effizienz ab, ab 200% Belegung sind keine weiteren Registrierungen mehr möglich.">
+					</div>
+					<div class="largeText">%var41</div>
+				</div>
+				<div class="col col-xl-1 col-lg-2 col-md-3 col-sm-4 col-6">
+					<div class="ressource"><img src="gfx/Reputation.png" alt="Reputation"
+							title="Ruf der Plattform in der Öffentlichkeit. Je besser der Ruf, umso mehr neue Kunden werden von eurer Plattform angezogen.">
+					</div>
+					<div class="smallText">%var42</div>
+				</div>
+				<div class="col col-xl-1 col-lg-2 col-md-3 col-sm-4 col-6">
+					<div class="ressource">
+						<img src="gfx/Transactions.png" alt="Transactions"
+							title="Anzahl Transaktionen die auf eurer Plattform seit Beginn des Spiels getätigt wurden">
+					</div>
+					<div class="smallText">%var43</div>
+				</div>
+				<div class="col col-xl-1 col-lg-2 col-md-3 col-sm-4 col-6">
+					<div class="ressource">
+						<img src="gfx/Sanduhr.png" alt="Runde" title="Aktuelle Spielrunde.">
+					</div>
+					<div class="smallText">%var44</div>
+				</div>
 			</div>
-			<div class="ressource"><img src="gfx/PopBuyers.png" alt="Buyers"
-					title="Anzahl der Käufer auf eurer Plattform vs. die maximale Anzahl an Käufern welche auf der Plattform effizient interagieren können. Ab 100% Belegung nimmt die Effizienz ab, ab 200% Belegung sind keine weiteren Registrierungen mehr möglich."
-					width="55%"></div>
-			<div class="largeText">%var40</div>
-
-			<div class="ressource"><img src="gfx/PopSellers.png" alt="Sellers"
-					title="Anzahl der Verkäufer auf eurer Plattform vs. die maximale Anzahl an Verkäufern welche auf der Plattform effizient interagieren können. Ab 100% Belegung nimmt die Effizienz ab, ab 200% Belegung sind keine weiteren Registrierungen mehr möglich."
-					width="55%"></div>
-			<div class="largeText">%var41</div>
-			<div class="ressource"><img src="gfx/Reputation.png" alt="Reputation"
-					title="Ruf der Plattform in der Öffentlichkeit. Je besser der Ruf, umso mehr neue Kunden werden von eurer Plattform angezogen."
-					width="55%"></div>
-			<div class="smallText">%var42</div>
-			<div class="ressource"><img src="gfx/Transactions.png" alt="Transactions"
-					title="Anzahl Transaktionen die auf eurer Plattform seit Beginn des Spiels getätigt wurden"
-					width="55%"></div>
-			<div class="smallText">%var43</div>
-			<div class="ressource"><img src="gfx/Sanduhr.png" alt="Runde" title="Aktuelle Spielrunde." width="55%">
-			</div>
-			<div class="smallText">%var44</div>
 		</div>
 	</nav>
 
@@ -102,7 +123,8 @@
 							Preisniveau
 						</div>
 						<div class="value">
-							<input class="inputfield form-control" id="alignmentPrice" placeholder="%var01" value="%var01"></input>
+							<input class="inputfield form-control" id="alignmentPrice" placeholder="%var01"
+								value="%var01"></input>
 							<div class="invalid-feedback">Gebe eine Zahl ein.</div>
 						</div>
 					</div>
