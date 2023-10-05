@@ -1,6 +1,6 @@
 /* CSS Document */
 
-/* Define variables */
+/* Variables */
 :root {
     --primary-color: #E1061C;
 	--primary-color-transparent-90: #EE727F;
@@ -17,145 +17,23 @@
 }
 
 @media(max-width:768px) {
-
 	:root {
 		--tech-tree-image-width: 70px;
 	}
-
 }
 
 @media(max-width:576px) {
-
 	:root {
 		--tech-tree-image-width: 50px;
 	}
-
 }
+
 
 /* General */
 body {
 	background-color: var(--background-color);
 	max-width: 1920px;
 	margin: 0;
-}
-
-/* Header */
-header {
-	background-color: var(--primary-color);
-	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-	display: flex;
-	justify-content: center;
-	flex-wrap: wrap;
-	align-items: center;
-	position: sticky;
-	width: 100%;
-	height: 8.5em;
-	top: 0;
-	left: 0;
-	z-index: 10;
-}
-
-.logo-container {
-	position: absolute;
-	left: 0;
-	top: 0;
-	display: flex;
-	justify-content: center;
-	flex-wrap: wrap;
-	align-items: center;
-	padding: 1em;
-}
-
-.title-container {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	flex-wrap: wrap;
-	align-items: center;
-	height: 100%;
-	padding: 1em 6.5em 1em 6.5em;
-}
-
-/* Nav */
-nav {
-	background-color: white;
-	color: black;
-	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-	position: sticky;
-	top: 8.5em;
-	padding-top: 15px;
-	padding-bottom: 10px;
-	width: 100%;
-	z-index: 8;
-}
-
-/* Main */
-main {
-	margin: 0 5%;
-}
-
-.ressource {
-	margin: 0 2em 0 2em;
-	padding: 0%;
-}
-
-.ressource > img {
-	text-align: left;
-	float: left;
-	width: 25px;
-}
-
-
-/* Footer */
-
-footer {
-	background-color: var(--footer-color);
-	color: #FFFFFF;
-	position: sticky;
-	bottom: 0;
-	padding-top: 15px;
-	padding-bottom: 15px;
-	text-align: center;
-}
-
-/* General Style*/
-.page-divider {
-    background: #fff;
-    box-shadow: 0 4px 8px rgb(0, 0, 0, 0.2);
-    border-radius: 0.5em;
-    margin-bottom: 1em;
-    padding: 1em;
-    overflow: hidden;
-    object-fit: contain;
-    object-position: center;
-    overflow-x: auto;
-}
-
-/* Table Style*/
-table {
-	width: 100%;
-}
-
-tr {
-	height: 80px;
-}
-
-/* UPPER BAR*/
-
-.logo {
-	width: 150px;
-}
-
-.main-container {
-	margin-left: 20%;
-}
-
-.adjustToCenter {
-	flex-wrap: wrap;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	margin: 0% 10%;
 }
 
 h1 {
@@ -165,16 +43,6 @@ h1 {
 	padding-bottom: 2px;
 	padding-left: 5px;
 	text-align: center;
-}
-
-p {
-	text-align: center;
-	font-size: 17px;
-}
-
-iframe {
-	border-radius: 8px;
-	border: 1px solid #d3d3d3;
 }
 
 h2 {
@@ -189,6 +57,16 @@ h3 {
 	color: #000000;
 	font-size: 24px;
 	clear: both;
+}
+
+p {
+	text-align: center;
+	font-size: 17px;
+}
+
+iframe {
+	border-radius: 8px;
+	border: 1px solid #d3d3d3;
 }
 
 input {
@@ -224,45 +102,107 @@ button:active {
     transform: translateY(1px);
 }
 
+
+/* Header */
+header {
+	background-color: var(--primary-color);
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	align-items: center;
+	position: sticky;
+	width: 100%;
+	height: 8.5em;
+	top: 0;
+	left: 0;
+	z-index: 10;
+}
+
+.logo {
+	width: 150px;
+}
+
+.logo-container {
+	position: absolute;
+	left: 0;
+	top: 0;
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	align-items: center;
+	padding: 1em;
+}
+
+.title-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	flex-wrap: wrap;
+	align-items: center;
+	height: 100%;
+	padding: 1em 6.5em 1em 6.5em;
+}
+
+
+/* Nav */
+nav {
+	background-color: white;
+	color: black;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+	position: sticky;
+	top: 8.5em;
+	padding-top: 15px;
+	padding-bottom: 10px;
+	width: 100%;
+	z-index: 8;
+}
+
+
+/* Main */
+main {
+	margin: 0 5%;
+}
+
+table {
+	width: 100%;
+}
+
+tr {
+	height: 80px;
+}
+
 .button-container {
 	display: flex;
 	justify-content: center;
 	margin: 1em;
 }
 
-.fullcolumn {
-	color: #000000;
-	/* width: 96%; */
-	float: left;
-	margin: 2%;
-	text-align: justify;
+.page-divider {
+    background: #fff;
+    box-shadow: 0 4px 8px rgb(0, 0, 0, 0.2);
+    border-radius: 0.5em;
+    margin-bottom: 1em;
+    padding: 1em;
+    overflow: hidden;
+    object-fit: contain;
+    object-position: center;
+    overflow-x: auto;
 }
 
-.halfcolumn {
-	color: #000000;
-	width: 48%;
-	float: left;
-	margin: 1%;
-	text-align: justify;
+.divider-full {
+	margin: 2em 0;
 }
 
-.logocolumn {
-	width: 15%;
-	float: left;
-	margin: 2%;
+.ressource {
+	margin: 0 2em 0 2em;
+	padding: 0;
 }
 
-.titlecolumn {
-	width: 75%;
+.ressource > img {
+	text-align: left;
 	float: left;
-}
-
-.thirdcolumn {
-	width: 25%;
-	height: 22.5em;
-	overflow-y: auto;
-	float: left;
-	margin: 2%;
+	width: 25px;
 }
 
 .clearfix::after {
@@ -270,9 +210,6 @@ button:active {
 	clear: both;
 	display: table;
 }
-
-
-
 
 .smallText {
 	width: 4.1%;
@@ -285,17 +222,6 @@ button:active {
 }
 
 .largeText {
-	width: 7.9%;
-	float: left;
-	margin: 0%;
-	padding: 0%;
-	margin-top: 0.5%;
-	margin-right: 2%;
-	text-align: left;
-}
-
-.veryLargeText {
-	color: #FFFFFF;
 	width: 7.9%;
 	float: left;
 	margin: 0%;
@@ -357,10 +283,7 @@ button:active {
 	text-align: right;
 }
 
-.breaker {
-	display: none;
-}
-
+/* Main -- Tech Tree Styling */
 .grid-container {
 	display: grid;
 	grid-template-columns: calc(3*var(--tech-tree-image-width)) max(72.5%, 400px) 50px;
@@ -462,7 +385,37 @@ button:active {
 	background-color: var(--primary-color-transparent-90);
 }
 
+/* Main -- Event Styling */
+.event-body {
+	background-color: #F6B1B8;
+	padding: 0.5em 1em 0 1em;
+}
 
+.event-h2 {
+	color: black;
+	text-align: left;
+}
+
+.event-p {
+	color: black;
+	text-align: left;
+	font-size: 16px;
+}
+
+
+/* Footer */
+footer {
+	background-color: var(--footer-color);
+	color: #FFFFFF;
+	position: sticky;
+	bottom: 0;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	text-align: center;
+}
+
+
+/* Size Adaption */
 @media(max-width:768px) {
 
 	h1 {
