@@ -20,7 +20,7 @@
 	<header>
 		<div class="container">
 			<div class="logo-container">
-					<a href="ranking.html"><img class="logo" src="gfx/MainLogo.png" alt="Plattform Simulator Logo"></a>
+				<a href="ranking.html"><img class="logo" src="gfx/MainLogo.png" alt="Plattform Simulator Logo"></a>
 			</div>
 			<div class="title-container">
 				<div class="title">
@@ -31,102 +31,106 @@
 		</div>
 	</header>
 
-	<div class="adjustToCenter page-divider" style="margin: 2em 10% 2em 10%">
+	<main>
+		<div class="container-fluid">
 
-		<table style="width: 95%; margin-left:15px">
+			<div class="page-divider" style="margin: 2em 0">
 
-			<colgroup>
-				<col span="1" style="width: 7%;text-align:center">
-				<col span="1" style="width: 7%;">
-				<col span="1" style="width: 20%;">
-				<col span="1" style="width: 10%;">
-				<col span="1" style="width: 10%;">
-				<col span="1" style="width: 10%;">
-				<col span="1" style="width: 10%;">
-			</colgroup>
+				<table class="table table-striped table-hover">
 
-			<tr style="text-align:left">
-				<th style="text-align:center">Platz</th>
-				<th></th>
-				<th>Team</th>
-				<th>Käufer</th>
-				<th>Verkäufer</th>
-				<th>Trns.</th>
-				<th>Ruf</th>
-				<th>Punktzahl</th>
-			</tr>
-			<tr>
-				<td style="text-align:center">1.</td>
-				<td><img src="gfx/%var01-1.png" alt="Logo Team A" width="70%"></td>
-				<td><a href="state_%var01-1.html">%var01-1</a></td>
-				<td>%var02-1</td>
-				<td>%var03-1</td>
-				<td>%var04-1</td>
-				<td>%var05-1</td>
-				<td>%var06-1 <img src="gfx/Score.png" alt="Star" width="8%"></td>
-			</tr>
-			<tr>
-				<td style="text-align:center">2.</td>
-				<td><img src="gfx/%var01-2.png" alt="Logo Team B" width="70%"></td>
-				<td><a href="state_%var01-2.html">%var01-2</a></td>
-				<td>%var02-2</td>
-				<td>%var03-2</td>
-				<td>%var04-2</td>
-				<td>%var05-2</td>
-				<td>%var06-2 <img src="gfx/Score.png" alt="Star" width="8%"></td>
-			</tr>
-			<tr>
-				<td style="text-align:center">3.</td>
-				<td><img src="gfx/%var01-3.png" alt="Logo Team C" width="70%"></td>
-				<td><a href="state_%var01-3.html">%var01-3</a></td>
-				<td>%var02-3</td>
-				<td>%var03-3</td>
-				<td>%var04-3</td>
-				<td>%var05-3</td>
-				<td>%var06-3 <img src="gfx/Score.png" alt="Star" width="8%"></td>
-			</tr>
-			<tr>
-				<td style="text-align:center">4.</td>
-				<td><img src="gfx/%var01-4.png" alt="Logo Team D" width="70%"></td>
-				<td><a href="state_%var01-4.html">%var01-4</a></td>
-				<td>%var02-4</td>
-				<td>%var03-4</td>
-				<td>%var04-4</td>
-				<td>%var05-4</td>
-				<td>%var06-4 <img src="gfx/Score.png" alt="Star" width="8%"></td>
-			</tr>
-			<tr>
-				<td style="text-align:center">5.</td>
-				<td><img src="gfx/%var01-5.png" alt="Logo Team E" width="70%"></td>
-				<td><a href="state_%var01-5.html">%var01-5</a></td>
-				<td>%var02-5</td>
-				<td>%var03-5</td>
-				<td>%var04-5</td>
-				<td>%var05-5</td>
-				<td>%var06-5 <img src="gfx/Score.png" alt="Star" width="8%"></td>
-			</tr>
-			<tr>
-				<td style="text-align:center">6.</td>
-				<td><img src="gfx/%var01-6.png" alt="Logo Team F" width="70%"></td>
-				<td><a href="state_%var01-6.html">%var01-6</a></td>
-				<td>%var02-6</td>
-				<td>%var03-6</td>
-				<td>%var04-6</td>
-				<td>%var05-6</td>
-				<td>%var06-6 <img src="gfx/Score.png" alt="Star" width="8%"></td>
-			</tr>
-		</table>
-	</div>
-</main>
+					<colgroup>
+						<col span="1" style="width: 1.5em; text-align:center">
+						<col span="1" style="width: 2em;">
+						<col span="1" style="width: 20%;">
+						<col span="1" style="width: 10%;">
+						<col span="1" style="width: 10%;">
+						<col span="1" style="width: 10%;">
+						<col span="1" style="width: 10%;">
+					</colgroup>
+					<thead>
+						<tr style="text-align:left">
+							<th style="text-align:center">Platz</th>
+							<th></th>
+							<th>Team</th>
+							<th>Käufer</th>
+							<th>Verkäufer</th>
+							<th>Trns.</th>
+							<th>Ruf</th>
+							<th>Punktzahl</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td style="text-align:center">1.</td>
+							<td><img src="gfx/%var01-1.png" alt="Logo Team A" width="70%"></td>
+							<td><a href="state_%var01-1.html">%var01-1</a></td>
+							<td>%var02-1</td>
+							<td>%var03-1</td>
+							<td>%var04-1</td>
+							<td>%var05-1</td>
+							<td>%var06-1 <img src="gfx/Score.png" alt="Star" width="8%"></td>
+						</tr>
+						<tr>
+							<td style="text-align:center">2.</td>
+							<td><img src="gfx/%var01-2.png" alt="Logo Team B" width="70%"></td>
+							<td><a href="state_%var01-2.html">%var01-2</a></td>
+							<td>%var02-2</td>
+							<td>%var03-2</td>
+							<td>%var04-2</td>
+							<td>%var05-2</td>
+							<td>%var06-2 <img src="gfx/Score.png" alt="Star" width="8%"></td>
+						</tr>
+						<tr>
+							<td style="text-align:center">3.</td>
+							<td><img src="gfx/%var01-3.png" alt="Logo Team C" width="70%"></td>
+							<td><a href="state_%var01-3.html">%var01-3</a></td>
+							<td>%var02-3</td>
+							<td>%var03-3</td>
+							<td>%var04-3</td>
+							<td>%var05-3</td>
+							<td>%var06-3 <img src="gfx/Score.png" alt="Star" width="8%"></td>
+						</tr>
+						<tr>
+							<td style="text-align:center">4.</td>
+							<td><img src="gfx/%var01-4.png" alt="Logo Team D" width="70%"></td>
+							<td><a href="state_%var01-4.html">%var01-4</a></td>
+							<td>%var02-4</td>
+							<td>%var03-4</td>
+							<td>%var04-4</td>
+							<td>%var05-4</td>
+							<td>%var06-4 <img src="gfx/Score.png" alt="Star" width="8%"></td>
+						</tr>
+						<tr>
+							<td style="text-align:center">5.</td>
+							<td><img src="gfx/%var01-5.png" alt="Logo Team E" width="70%"></td>
+							<td><a href="state_%var01-5.html">%var01-5</a></td>
+							<td>%var02-5</td>
+							<td>%var03-5</td>
+							<td>%var04-5</td>
+							<td>%var05-5</td>
+							<td>%var06-5 <img src="gfx/Score.png" alt="Star" width="8%"></td>
+						</tr>
+						<tr>
+							<td style="text-align:center">6.</td>
+							<td><img src="gfx/%var01-6.png" alt="Logo Team F" width="70%"></td>
+							<td><a href="state_%var01-6.html">%var01-6</a></td>
+							<td>%var02-6</td>
+							<td>%var03-6</td>
+							<td>%var04-6</td>
+							<td>%var05-6</td>
+							<td>%var06-6 <img src="gfx/Score.png" alt="Star" width="8%"></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</main>
 
-<footer>
-	<div class="adjustToCenter">
-		Plattform Simulator |
-		<a href="impressum.html" style="color:#FFFFFF;">Impressum</a> |
+	<footer>
+		Plattform Simulator |&nbsp;
+		<a href="impressum.html" style="color:#FFFFFF;">Impressum</a>&nbsp;|&nbsp;
 		<a href="dsgvo.html" style="color:#FFFFFF;">Datenschutz</a>
-	</div>
-</footer>
-
+	</footer>
 
 </body>
 
