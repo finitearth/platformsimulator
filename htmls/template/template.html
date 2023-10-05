@@ -22,7 +22,7 @@
 	<header>
 		<div class="container">
 			<div class="logo-container">
-					<a href="ranking.html"><img class="logo" src="gfx/MainLogo.png" alt="Plattform Simulator Logo"></a>
+				<a href="ranking.html"><img class="logo" src="gfx/MainLogo.png" alt="Plattform Simulator Logo"></a>
 			</div>
 			<div class="title-container">
 				<div class="title">
@@ -98,836 +98,896 @@
 	</nav>
 
 	<main>
-		<div class="adjustToCenter">
-			<div class="clearfix">
-				<div class="fullcolumn page-divider">
-					<!-- paste html events/event1.html as iframe -->
-					<iframe src="events/event1.html" width="100%"></iframe>
-					Event-Entscheidung:
-					<input class="inputfield" id="eventDecision" placeholder="a,b,..."></input>
+		<div class="container-fluid">
+			<div class="button-container">
+				<button id="generate">Code generieren</button>
+			</div>
+
+			<div class="row">
+				<div class="col">
+					<div class="page-divider">
+						<iframe src="events/event1.html" width="100%" height="160px"></iframe>
+						<b>Event-Entscheidung:</b>
+						<input class="inputfield" id="eventDecision" placeholder="a,b,..."></input>
+					</div>
 				</div>
 			</div>
 
-			<button id="generate" s>Code generieren</button>
+			<div class="row">
+				<div class="col-lg-4 col-md-6 col-12">
+					<div class="page-divider">
+						<h3>Plattform</h3>
 
-			<div class="clearfix">
-				<div class="thirdcolumn page-divider">
-					<h3>Plattform</h3>
+						<div class="clearfix">
+							<div class="icon">
+								<img src="gfx/PriceRange.png" alt="Preisniveau"
+									title="Der Markt im Spiel ist in zwei Dimensionen horizontal Differenziert. Für die Dimensionen Preisniveau und Produktart wird dabei eine auf 1 normierte Hotelling-Straße verwendet. Beim Preisniveau steht die 0 für billige Artikel, 0.5 für die Mittelklasse und 1 für das Hochpreissegment. Eure Plattform kann jede Zahl zwischen 0 und 1 wählen und zieht Käufer/Verkäufer die sich in einem ähnlichen Preisbereich bewegen verstärkt an."
+									width="75%">
+							</div>
+							<div class="description">
+								Preisniveau
+							</div>
+							<div class="value">
+								<input class="inputfield form-control" id="alignmentPrice" placeholder="%var01"
+									value="%var01"></input>
+								<div class="invalid-feedback">Gebe eine Zahl ein.</div>
+							</div>
+						</div>
 
-					<div class="clearfix">
-						<div class="icon">
-							<img src="gfx/PriceRange.png" alt="Preisniveau"
-								title="Der Markt im Spiel ist in zwei Dimensionen horizontal Differenziert. Für die Dimensionen Preisniveau und Produktart wird dabei eine auf 1 normierte Hotelling-Straße verwendet. Beim Preisniveau steht die 0 für billige Artikel, 0.5 für die Mittelklasse und 1 für das Hochpreissegment. Eure Plattform kann jede Zahl zwischen 0 und 1 wählen und zieht Käufer/Verkäufer die sich in einem ähnlichen Preisbereich bewegen verstärkt an."
-								width="75%">
+						<div class="clearfix">
+							<div class="icon">
+								<img src="gfx/ProductType.png" alt="Produktart"
+									title="Der Markt im Spiel ist in zwei Dimensionen horizontal Differenziert. Für die Dimensionen Preisniveau und Produktart wird dabei eine auf 1 normierte Hotelling-Straße verwendet. Beim Produktart steht die 0 für schlich-pragmatische Artikel, 0.5 für gängige Designartikel und 1 für künstlerische Werke. Eure Plattform kann jede Zahl zwischen 0 und 1 wählen und zieht Käufer/Verkäufer die sich in einem ähnlichen Produktbereich bewegen verstärkt an."
+									width="75%">
+							</div>
+							<div class="description">
+								Produktart
+							</div>
+							<div class="value">
+								<input class="inputfield form-control" id="alignmentProduct" placeholder="%var02"
+									value="%var02"></input>
+								<div class="invalid-feedback">Gebe eine Zahl ein.</div>
+							</div>
 						</div>
-						<div class="description">
-							Preisniveau
+
+						<div class="clearfix">
+							<div class="icon">
+								<img src="gfx/Coder.png" alt="Entwickler"
+									title="Jeder Entwickler kostet 25k pro Runde und erzeugt mindestens 50 Code"
+									width="75%">
+							</div>
+							<div class="description">
+								Entwickler
+							</div>
+							<div class="value">
+								<input class="inputfield form-control" id="coders" placeholder="%var03"
+									value="%var03"></input>
+								<div class="invalid-feedback">Gebe eine Zahl ein.</div>
+							</div>
 						</div>
-						<div class="value">
-							<input class="inputfield form-control" id="alignmentPrice" placeholder="%var01"
-								value="%var01"></input>
-							<div class="invalid-feedback">Gebe eine Zahl ein.</div>
+
+						<div class="clearfix">
+							<div class="icon">
+								<img src="gfx/DataScientist.png" alt="DataScientist"
+									title="Data Scientists kosten 25k pro Runde und wandeln Rohdaten in verarbeitete Daten. Die Umwandlung wird durch Einsatz moderner Maschine Learning Methoden deutlich effizienter"
+									width="75%">
+							</div>
+							<div class="description">
+								Data Scientists
+							</div>
+							<div class="value">
+								<input class="inputfield form-control" id="dataScientists" placeholder="%var04"
+									value="%var04"></input>
+								<div class="invalid-feedback">Gebe eine Zahl ein.</div>
+							</div>
+						</div>
+
+						<div class="clearfix">
+							<div class="icon">
+								<img src="gfx/Marketer.png" alt="Marketer"
+									title="Marketer kosten 25k pro Runde und verbessern die Sichtbarkeit eurer Plattform, sowie die Effizienz von auf der Plattform geschalteter PPC Werbung. Außerdem erzeugt jeder Marketer eine geringe Menge an verarbeiteten Daten pro Runde."
+									width="75%">
+							</div>
+							<div class="description">
+								Marketer
+							</div>
+							<div class="value">
+								<input class="inputfield form-control" id="marketers" placeholder="%var05"
+									value="%var05"></input>
+								<div class="invalid-feedback">Gebe eine Zahl ein.</div>
+							</div>
+						</div>
+
+						<div class="clearfix">
+							<div class="icon">
+								<img src="gfx/Moderator.png" alt="Moderator"
+									title="Moderatoren kosten 25k pro Runde und verringern die Wahrscheinlichkeit von ungewollten Ereignissen (Betrugsfälle und Fake-Reviews) um je 20%."
+									width="75%">
+							</div>
+							<div class="description">
+								Moderatoren
+							</div>
+							<div class="value">
+								<input class="inputfield form-control" id="mods" placeholder="%var06"
+									value="%var06"></input>
+								<div class="invalid-feedback">Gebe eine Zahl ein.</div>
+							</div>
 						</div>
 					</div>
-
-					<div class="clearfix">
-						<div class="icon">
-							<img src="gfx/ProductType.png" alt="Produktart"
-								title="Der Markt im Spiel ist in zwei Dimensionen horizontal Differenziert. Für die Dimensionen Preisniveau und Produktart wird dabei eine auf 1 normierte Hotelling-Straße verwendet. Beim Produktart steht die 0 für schlich-pragmatische Artikel, 0.5 für gängige Designartikel und 1 für künstlerische Werke. Eure Plattform kann jede Zahl zwischen 0 und 1 wählen und zieht Käufer/Verkäufer die sich in einem ähnlichen Produktbereich bewegen verstärkt an."
-								width="75%">
-						</div>
-						<div class="description">
-							Produktart
-						</div>
-						<div class="value">
-							<input class="inputfield form-control" id="alignmentProduct" placeholder="%var02"
-								value="%var02"></input>
-							<div class="invalid-feedback">Gebe eine Zahl ein.</div>
-						</div>
-					</div>
-
-					<div class="clearfix">
-						<div class="icon">
-							<img src="gfx/Coder.png" alt="Entwickler"
-								title="Jeder Entwickler kostet 25k pro Runde und erzeugt mindestens 50 Code"
-								width="75%">
-						</div>
-						<div class="description">
-							Entwickler
-						</div>
-						<div class="value">
-							<input class="inputfield form-control" id="coders" placeholder="%var03"
-								value="%var03"></input>
-							<div class="invalid-feedback">Gebe eine Zahl ein.</div>
-						</div>
-					</div>
-
-					<div class="clearfix">
-						<div class="icon">
-							<img src="gfx/DataScientist.png" alt="DataScientist"
-								title="Data Scientists kosten 25k pro Runde und wandeln Rohdaten in verarbeitete Daten. Die Umwandlung wird durch Einsatz moderner Maschine Learning Methoden deutlich effizienter"
-								width="75%">
-						</div>
-						<div class="description">
-							Data Scientists
-						</div>
-						<div class="value">
-							<input class="inputfield form-control" id="dataScientists" placeholder="%var04"
-								value="%var04"></input>
-							<div class="invalid-feedback">Gebe eine Zahl ein.</div>
-						</div>
-					</div>
-
-					<div class="clearfix">
-						<div class="icon">
-							<img src="gfx/Marketer.png" alt="Marketer"
-								title="Marketer kosten 25k pro Runde und verbessern die Sichtbarkeit eurer Plattform, sowie die Effizienz von auf der Plattform geschalteter PPC Werbung. Außerdem erzeugt jeder Marketer eine geringe Menge an verarbeiteten Daten pro Runde."
-								width="75%">
-						</div>
-						<div class="description">
-							Marketer
-						</div>
-						<div class="value">
-							<input class="inputfield" id="marketers" placeholder="%var05" value="%var05"></input>
-						</div>
-					</div>
-
-					<div class="clearfix">
-						<div class="icon">
-							<img src="gfx/Moderator.png" alt="Moderator"
-								title="Moderatoren kosten 25k pro Runde und verringern die Wahrscheinlichkeit von ungewollten Ereignissen (Betrugsfälle und Fake-Reviews) um je 20%."
-								width="75%">
-						</div>
-						<div class="description">
-							Moderatoren
-						</div>
-						<div class="value">
-							<input class="inputfield form-control" id="mods" placeholder="%var06"
-								value="%var06"></input>
-							<div class="invalid-feedback">Gebe eine Zahl ein.</div>
-						</div>
-					</div>
-
-				</div>
-				<div class="thirdcolumn page-divider">
-					<h3>Käufer</h3>
-
-					<div class="clearfix">
-						<div class="icon">
-							<img src="gfx/SignupFee.png" alt="Anmeldegebühr"
-								title="Diese Gebühr wird einmalig bei der Registrierung entrichtet. Sie kann negativ gewählt werden, um Neukunden einen Sign-Up Bonus zu gewähren."
-								width="75%">
-						</div>
-						<div class="description">
-							Anmeldegebühr
-						</div>
-						<div class="value">
-							<input class="inputfield form-control" id="buyerPriceSign" placeholder="%var07"
-								value="%var07"></input>
-							<div class="invalid-feedback">Gebe eine Zahl ein.</div>
-						</div>
-					</div>
-
-					<div class="clearfix">
-						<div class="icon">
-							<img src="gfx/SubFee.png" alt="Abogebühr" title="Diese Gebühr wird pro Runde entrichtet"
-								width="75%">
-						</div>
-						<div class="description">
-							Abogebühr
-						</div>
-						<div class="value">
-							<input class="inputfield form-control" id="buyerPriceSub" placeholder="%var08"
-								value="%var08"></input>
-							<div class="invalid-feedback">Gebe eine Zahl ein.</div>
-						</div>
-					</div>
-
-					<div class="clearfix">
-						<div class="icon">
-							<img src="gfx/Comission.png" alt="Komission"
-								title="Diese Gebühr wird pro Transaktion entrichtet. Sie kann aus einem Fixbetrag und einer prozentualen Komission bestehen."
-								width="75%">
-						</div>
-						<div class="description">
-							Komission
-						</div>
-						<div class="value">
-							<input class="inputfield form-control" id="buyerPriceComission" placeholder="%var09"
-								value="%var09"></input>
-							<div class="invalid-feedback">Gebe eine Zahl ein.</div>
-						</div>
-					</div>
-
-					<div class="clearfix">
-						<div class="icon">
-							<img src="gfx/AdCPM.png" alt="Bannerwerbung"
-								title="Intensität mit der eure Plattform klassische nach Impressionen bezahlte Bannerwerbung betreibt. Wertebereich von 0% für keine Werbung bis 100% für extrem aufdringlich."
-								width="75%">
-						</div>
-						<div class="description">
-							Bannerwerbung
-						</div>
-						<div class="value">
-							<input class="inputfield form-control" id="buyerAdActivityCPM" placeholder="%var10"
-								value="%var10"></input>
-							<div class="invalid-feedback">Gebe eine Zahl ein.</div>
-						</div>
-					</div>
-
-					<div class="clearfix">
-						<div class="icon">
-							<img src="gfx/AdPPC.png" alt="PPC-Werbung"
-								title="Intensität mit der eure Plattform nach Klicks bezahlte Werbeformate betreibt. Die Effizienz dieser Art von Werbung kann durch entsprechende Technologien deutlich gesteigert werden."
-								width="75%">
-						</div>
-						<div class="description">
-							PPC-Werbung
-						</div>
-						<div class="value">
-							<input class="inputfield form-control" id="buyerAdActivityPPC" placeholder="%var11"
-								value="%var11"></input>
-							<div class="invalid-feedback">Gebe eine Zahl ein.</div>
-						</div>
-					</div>
-
-					<div class="clearfix">
-						<div class="icon">
-							<img src="gfx/Freemium.png" alt="Freemium"
-								title="Wird Freemium angeboten kann der Nutzer zwischen SignUp & Abogebühren ODER Werbung entscheiden. Kommissionen müssen in beiden Tarifen bezahlt werden."
-								width="75%">
-						</div>
-						<div class="description">
-							Freemium
-						</div>
-						<div class="value">
-							<input class="inputfield form-control" id="buyerFreemium" placeholder="%var12"
-								value="%var12"></input>
-							<div class="invalid-feedback">Gebe eine Zahl ein.</div>
-						</div>
-					</div>
-
-				</div>
-				<div class="thirdcolumn page-divider">
-					<h3>Verkäufer</h3>
-
-					<div class="clearfix">
-						<div class="icon">
-							<img src="gfx/SignupFee.png" alt="Anmeldegebühr"
-								title="Diese Gebühr wird einmalig bei der Registrierung entrichtet. Sie kann negativ gewählt werden, um Neukunden einen Sign-Up Bonus zu gewähren."
-								width="75%">
-						</div>
-						<div class="description">
-							Anmeldegebühr
-						</div>
-						<div class="value">
-							<input class="inputfield form-control" id="sellerPriceSign" placeholder="%var13"
-								value="%var13"></input>
-							<div class="invalid-feedback">Gebe eine Zahl ein.</div>
-						</div>
-					</div>
-
-					<div class="clearfix">
-						<div class="icon">
-							<img src="gfx/SubFee.png" alt="Abogebühr" title="Diese Gebühr wird pro Runde entrichtet"
-								width="75%">
-						</div>
-						<div class="description">
-							Abogebühr
-						</div>
-						<div class="value">
-							<input class="inputfield form-control" id="sellerPriceSub" placeholder="%var14"
-								value="%var14"></input>
-							<div class="invalid-feedback">Gebe eine Zahl ein.</div>
-						</div>
-					</div>
-
-					<div class="clearfix">
-						<div class="icon">
-							<img src="gfx/Comission.png" alt="Komission"
-								title="Diese Gebühr wird pro Transaktion entrichtet. Sie kann aus einem Fixbetrag und einer prozentualen Komission bestehen."
-								width="75%">
-						</div>
-						<div class="description">
-							Komission
-						</div>
-						<div class="value">
-							<input class="inputfield form-control" id="sellerPriceComission" placeholder="%var15"
-								value="%var15"></input>
-							<div class="invalid-feedback">Gebe eine Zahl ein.</div>
-						</div>
-					</div>
-
-					<div class="clearfix">
-						<div class="icon">
-							<img src="gfx/AdCPM.png" alt="Bannerwerbung"
-								title="Intensität mit der eure Plattform klassische nach Impressionen bezahlte Bannerwerbung betreibt. Wertebereich von 0% für keine Werbung bis 100% für extrem aufdringlich."
-								width="75%">
-						</div>
-						<div class="description">
-							Bannerwerbung
-						</div>
-						<div class="value">
-							<input class="inputfield form-control" id="sellerAdActivityCPM" placeholder="%var16"
-								value="%var16"></input>
-							<div class="invalid-feedback">Gebe eine Zahl ein.</div>
-						</div>
-					</div>
-
-					<div class="clearfix">
-						<div class="icon">
-							<img src="gfx/AdPPC.png" alt="PPC-Werbung"
-								title="Intensität mit der eure Plattform nach Klicks bezahlte Werbeformate betreibt. Die Effizienz dieser Art von Werbung kann durch entsprechende Technologien deutlich gesteigert werden."
-								width="75%">
-						</div>
-						<div class="description">
-							PPC-Werbung
-						</div>
-						<div class="value">
-							<input class="inputfield form-control" id="sellerAdActivityPPC" placeholder="%var17"
-								value="%var17"></input>
-							<div class="invalid-feedback">Gebe eine Zahl ein.</div>
-						</div>
-					</div>
-
-					<div class="clearfix">
-						<div class="icon">
-							<img src="gfx/Freemium.png" alt="Freemium"
-								title="Wird Freemium angeboten kann der Nutzer zwischen SignUp & Abogebühren ODER Werbung entscheiden. Kommissionen müssen in beiden Tarifen bezahlt werden."
-								width="75%">
-						</div>
-						<div class="description">
-							Freemium
-						</div>
-						<div class="value">
-							<input class="inputfield form-control" id="sellerFreemium" placeholder="%var18"
-								value="%var18"></input>
-							<div class="invalid-feedback">Gebe eine Zahl ein.</div>
-						</div>
-					</div>
-
 				</div>
 
-				<div class="thirdcolumn page-divider">
-					<h3>Bewertung</h3>
 
-					<div class="clearfix">
-						<div class="iconSmall">
-							<img src="gfx/Gold.png" alt="Gold" width="85%">
+				<div class="col-lg-4 col-md-6 col-12">
+					<div class="page-divider">
+						<h3>Käufer</h3>
+
+						<div class="clearfix">
+							<div class="icon">
+								<img src="gfx/SignupFee.png" alt="Anmeldegebühr"
+									title="Diese Gebühr wird einmalig bei der Registrierung entrichtet. Sie kann negativ gewählt werden, um Neukunden einen Sign-Up Bonus zu gewähren."
+									width="75%">
+							</div>
+							<div class="description">
+								Anmeldegebühr
+							</div>
+							<div class="value">
+								<input class="inputfield form-control" id="buyerPriceSign" placeholder="%var07"
+									value="%var07"></input>
+								<div class="invalid-feedback">Gebe eine Zahl ein.</div>
+							</div>
 						</div>
-						<div class="descriptionSmall">
-							Geldbestand
+
+						<div class="clearfix">
+							<div class="icon">
+								<img src="gfx/SubFee.png" alt="Abogebühr" title="Diese Gebühr wird pro Runde entrichtet"
+									width="75%">
+							</div>
+							<div class="description">
+								Abogebühr
+							</div>
+							<div class="value">
+								<input class="inputfield form-control" id="buyerPriceSub" placeholder="%var08"
+									value="%var08"></input>
+								<div class="invalid-feedback">Gebe eine Zahl ein.</div>
+							</div>
 						</div>
-						<div class="valueSmall">
-							%var19
+
+						<div class="clearfix">
+							<div class="icon">
+								<img src="gfx/Comission.png" alt="Komission"
+									title="Diese Gebühr wird pro Transaktion entrichtet. Sie kann aus einem Fixbetrag und einer prozentualen Komission bestehen."
+									width="75%">
+							</div>
+							<div class="description">
+								Komission
+							</div>
+							<div class="value">
+								<input class="inputfield form-control" id="buyerPriceComission" placeholder="%var09"
+									value="%var09"></input>
+								<div class="invalid-feedback">Gebe eine Zahl ein.</div>
+							</div>
 						</div>
-						<div class="iconSmall">
-							<img src="gfx/Score.png" alt="Score" width="85%">
+
+						<div class="clearfix">
+							<div class="icon">
+								<img src="gfx/AdCPM.png" alt="Bannerwerbung"
+									title="Intensität mit der eure Plattform klassische nach Impressionen bezahlte Bannerwerbung betreibt. Wertebereich von 0% für keine Werbung bis 100% für extrem aufdringlich."
+									width="75%">
+							</div>
+							<div class="description">
+								Bannerwerbung
+							</div>
+							<div class="value">
+								<input class="inputfield form-control" id="buyerAdActivityCPM" placeholder="%var10"
+									value="%var10"></input>
+								<div class="invalid-feedback">Gebe eine Zahl ein.</div>
+							</div>
 						</div>
+
+						<div class="clearfix">
+							<div class="icon">
+								<img src="gfx/AdPPC.png" alt="PPC-Werbung"
+									title="Intensität mit der eure Plattform nach Klicks bezahlte Werbeformate betreibt. Die Effizienz dieser Art von Werbung kann durch entsprechende Technologien deutlich gesteigert werden."
+									width="75%">
+							</div>
+							<div class="description">
+								PPC-Werbung
+							</div>
+							<div class="value">
+								<input class="inputfield form-control" id="buyerAdActivityPPC" placeholder="%var11"
+									value="%var11"></input>
+								<div class="invalid-feedback">Gebe eine Zahl ein.</div>
+							</div>
+						</div>
+
+						<div class="clearfix">
+							<div class="icon">
+								<img src="gfx/Freemium.png" alt="Freemium"
+									title="Wird Freemium angeboten kann der Nutzer zwischen SignUp & Abogebühren ODER Werbung entscheiden. Kommissionen müssen in beiden Tarifen bezahlt werden."
+									width="75%">
+							</div>
+							<div class="description">
+								Freemium
+							</div>
+							<div class="value">
+								<input class="inputfield form-control" id="buyerFreemium" placeholder="%var12"
+									value="%var12"></input>
+								<div class="invalid-feedback">Gebe eine Zahl ein.</div>
+							</div>
+						</div>
+
 					</div>
-
-					<div class="clearfix">
-						<div class="iconSmall">
-							<img src="gfx/Insight.png" alt="Insight" width="85%">
-						</div>
-						<div class="descriptionSmall">
-							Datenbestand
-						</div>
-						<div class="valueSmall">
-							%var20
-						</div>
-						<div class="iconSmall">
-							<img src="gfx/Score.png" alt="Score" width="85%">
-						</div>
-					</div>
-
-					<div class="clearfix">
-						<div class="iconSmall">
-							<img src="gfx/Tech.png" alt="Tech" width="85%">
-						</div>
-						<div class="descriptionSmall">
-							Know-How
-						</div>
-						<div class="valueSmall">
-							%var21
-						</div>
-						<div class="iconSmall">
-							<img src="gfx/Score.png" alt="Score" width="85%">
-						</div>
-					</div>
-
-					<div class="clearfix">
-						<div class="iconSmall">
-							<img src="gfx/PopTotal.png" alt="Gesamtnetzwerk" width="85%">
-						</div>
-						<div class="descriptionSmall">
-							Netzwerkgröße
-						</div>
-						<div class="valueSmall">
-							%var22
-						</div>
-						<div class="iconSmall">
-							<img src="gfx/Score.png" alt="Score" width="85%">
-						</div>
-					</div>
-
-					<div class="clearfix">
-						<div class="iconSmall">
-							<img src="gfx/Transactions.png" alt="Transaktionen" width="85%">
-						</div>
-						<div class="descriptionSmall">
-							Transaktionen
-						</div>
-						<div class="valueSmall">
-							%var23
-						</div>
-						<div class="iconSmall">
-							<img src="gfx/Score.png" alt="Score" width="85%">
-						</div>
-					</div>
-
-					<div class="clearfix">
-						<div class="iconSmall">
-							<img src="gfx/Reputation.png" alt="Reputation" width="85%">
-						</div>
-						<div class="descriptionSmall">
-							Ruf
-						</div>
-						<div class="valueSmall">
-							%var24
-						</div>
-						<div class="iconSmall">
-							<img src="gfx/Score.png" alt="Score" width="85%">
-						</div>
-					</div>
-
-					<div class="clearfix">
-						<div class="iconSmall">
-
-						</div>
-						<div class="descriptionSmall">
-							<b>GESAMT</b>
-						</div>
-						<div class="valueSmall">
-							<b>%var25</b>
-						</div>
-						<div class="iconSmall">
-							<img src="gfx/Score.png" alt="Score" width="85%">
-						</div>
-					</div>
-
 				</div>
 
-				<div class="thirdcolumn page-divider">
-					<h3>Einnahmen</h3>
+				<div class="col-lg-4 col-md-6 col-12">
+					<div class="page-divider">
+						<h3>Verkäufer</h3>
 
-					<div class="clearfix">
-						<div class="iconSmall">
-							<img src="gfx/SignUp.png" alt="Anmeldungen" width="85%">
+						<div class="clearfix">
+							<div class="icon">
+								<img src="gfx/SignupFee.png" alt="Anmeldegebühr"
+									title="Diese Gebühr wird einmalig bei der Registrierung entrichtet. Sie kann negativ gewählt werden, um Neukunden einen Sign-Up Bonus zu gewähren."
+									width="75%">
+							</div>
+							<div class="description">
+								Anmeldegebühr
+							</div>
+							<div class="value">
+								<input class="inputfield form-control" id="sellerPriceSign" placeholder="%var13"
+									value="%var13"></input>
+								<div class="invalid-feedback">Gebe eine Zahl ein.</div>
+							</div>
 						</div>
-						<div class="descriptionSmall">
-							Anmeldegebühren
+
+						<div class="clearfix">
+							<div class="icon">
+								<img src="gfx/SubFee.png" alt="Abogebühr" title="Diese Gebühr wird pro Runde entrichtet"
+									width="75%">
+							</div>
+							<div class="description">
+								Abogebühr
+							</div>
+							<div class="value">
+								<input class="inputfield form-control" id="sellerPriceSub" placeholder="%var14"
+									value="%var14"></input>
+								<div class="invalid-feedback">Gebe eine Zahl ein.</div>
+							</div>
 						</div>
-						<div class="valueSmall">
-							%var26
+
+						<div class="clearfix">
+							<div class="icon">
+								<img src="gfx/Comission.png" alt="Komission"
+									title="Diese Gebühr wird pro Transaktion entrichtet. Sie kann aus einem Fixbetrag und einer prozentualen Komission bestehen."
+									width="75%">
+							</div>
+							<div class="description">
+								Komission
+							</div>
+							<div class="value">
+								<input class="inputfield form-control" id="sellerPriceComission" placeholder="%var15"
+									value="%var15"></input>
+								<div class="invalid-feedback">Gebe eine Zahl ein.</div>
+							</div>
 						</div>
-						<div class="iconSmall">
-							<img src="gfx/Gold.png" alt="Gold" width="85%">
+
+						<div class="clearfix">
+							<div class="icon">
+								<img src="gfx/AdCPM.png" alt="Bannerwerbung"
+									title="Intensität mit der eure Plattform klassische nach Impressionen bezahlte Bannerwerbung betreibt. Wertebereich von 0% für keine Werbung bis 100% für extrem aufdringlich."
+									width="75%">
+							</div>
+							<div class="description">
+								Bannerwerbung
+							</div>
+							<div class="value">
+								<input class="inputfield form-control" id="sellerAdActivityCPM" placeholder="%var16"
+									value="%var16"></input>
+								<div class="invalid-feedback">Gebe eine Zahl ein.</div>
+							</div>
+						</div>
+
+						<div class="clearfix">
+							<div class="icon">
+								<img src="gfx/AdPPC.png" alt="PPC-Werbung"
+									title="Intensität mit der eure Plattform nach Klicks bezahlte Werbeformate betreibt. Die Effizienz dieser Art von Werbung kann durch entsprechende Technologien deutlich gesteigert werden."
+									width="75%">
+							</div>
+							<div class="description">
+								PPC-Werbung
+							</div>
+							<div class="value">
+								<input class="inputfield form-control" id="sellerAdActivityPPC" placeholder="%var17"
+									value="%var17"></input>
+								<div class="invalid-feedback">Gebe eine Zahl ein.</div>
+							</div>
+						</div>
+
+						<div class="clearfix">
+							<div class="icon">
+								<img src="gfx/Freemium.png" alt="Freemium"
+									title="Wird Freemium angeboten kann der Nutzer zwischen SignUp & Abogebühren ODER Werbung entscheiden. Kommissionen müssen in beiden Tarifen bezahlt werden."
+									width="75%">
+							</div>
+							<div class="description">
+								Freemium
+							</div>
+							<div class="value">
+								<input class="inputfield form-control" id="sellerFreemium" placeholder="%var18"
+									value="%var18"></input>
+								<div class="invalid-feedback">Gebe eine Zahl ein.</div>
+							</div>
 						</div>
 					</div>
-
-					<div class="clearfix">
-						<div class="iconSmall">
-							<img src="gfx/Subscription.png" alt="Abonnements" width="85%">
-						</div>
-						<div class="descriptionSmall">
-							Abogebühren
-						</div>
-						<div class="valueSmall">
-							%var27
-						</div>
-						<div class="iconSmall">
-							<img src="gfx/Gold.png" alt="Gold" width="85%">
-						</div>
-					</div>
-
-					<div class="clearfix">
-						<div class="iconSmall">
-							<img src="gfx/Comission.png" alt="Komissionen" width="85%">
-						</div>
-						<div class="descriptionSmall">
-							Komissionen
-						</div>
-						<div class="valueSmall">
-							%var28
-						</div>
-						<div class="iconSmall">
-							<img src="gfx/Gold.png" alt="Gold" width="85%">
-						</div>
-					</div>
-
-					<div class="clearfix">
-						<div class="iconSmall">
-							<img src="gfx/Adverts.png" alt="Komissionen" width="85%">
-						</div>
-						<div class="descriptionSmall">
-							Werbung
-						</div>
-						<div class="valueSmall">
-							%var29
-						</div>
-						<div class="iconSmall">
-							<img src="gfx/Gold.png" alt="Gold" width="85%">
-						</div>
-					</div>
-
-					<div class="clearfix">
-						<div class="iconSmall">
-							<img src="gfx/Insight.png" alt="Datenverkauf" width="85%">
-						</div>
-						<div class="descriptionSmall">
-							Datenverkauf
-						</div>
-						<div class="valueSmall">
-							%var30
-						</div>
-						<div class="iconSmall">
-							<img src="gfx/Gold.png" alt="Gold" width="85%">
-						</div>
-					</div>
-
-					<div class="clearfix">
-						<div class="iconSmall">
-						</div>
-						<div class="descriptionSmall">
-							<b>GESAMT</b>
-						</div>
-						<div class="valueSmall">
-							<b>%var31</b>
-						</div>
-						<div class="iconSmall">
-							<img src="gfx/Gold.png" alt="Gold" width="85%">
-						</div>
-					</div>
-
-
 				</div>
 
-				<div class="thirdcolumn page-divider">
-					<h3>Ausgaben</h3>
+				<div class="col-lg-4 col-md-6 col-12">
+					<div class="page-divider">
+						<h3>Bewertung</h3>
 
-					<div class="clearfix">
-						<div class="iconSmall">
-							<img src="gfx/Employee.png" alt="Betriebskosten" width="85%">
+						<div class="clearfix">
+							<div class="iconSmall">
+								<img src="gfx/Gold.png" alt="Gold" width="85%">
+							</div>
+							<div class="descriptionSmall">
+								Geldbestand
+							</div>
+							<div class="valueSmall">
+								%var19
+							</div>
+							<div class="iconSmall">
+								<img src="gfx/Score.png" alt="Score" width="85%">
+							</div>
 						</div>
-						<div class="descriptionSmall">
-							Betriebskosten
-						</div>
-						<div class="valueSmall">
-							%var32
-						</div>
-						<div class="iconSmall">
-							<img src="gfx/Gold.png" alt="Gold" width="85%">
-						</div>
-					</div>
 
-					<div class="clearfix">
-						<div class="iconSmall">
-							<img src="gfx/Tech.png" alt="Entwicklungskosten" width="85%">
+						<div class="clearfix">
+							<div class="iconSmall">
+								<img src="gfx/Insight.png" alt="Insight" width="85%">
+							</div>
+							<div class="descriptionSmall">
+								Datenbestand
+							</div>
+							<div class="valueSmall">
+								%var20
+							</div>
+							<div class="iconSmall">
+								<img src="gfx/Score.png" alt="Score" width="85%">
+							</div>
 						</div>
-						<div class="descriptionSmall">
-							Entwicklungskosten
-						</div>
-						<div class="valueSmall">
-							%var33
-						</div>
-						<div class="iconSmall">
-							<img src="gfx/Gold.png" alt="Gold" width="85%">
-						</div>
-					</div>
 
-					<div class="clearfix">
-						<div class="iconSmall">
-							<img src="gfx/SignUp.png" alt="Anmeldeboni" width="85%">
+						<div class="clearfix">
+							<div class="iconSmall">
+								<img src="gfx/Tech.png" alt="Tech" width="85%">
+							</div>
+							<div class="descriptionSmall">
+								Know-How
+							</div>
+							<div class="valueSmall">
+								%var21
+							</div>
+							<div class="iconSmall">
+								<img src="gfx/Score.png" alt="Score" width="85%">
+							</div>
 						</div>
-						<div class="descriptionSmall">
-							Anmeldeboni
-						</div>
-						<div class="valueSmall">
-							%var34
-						</div>
-						<div class="iconSmall">
-							<img src="gfx/Gold.png" alt="Gold" width="85%">
-						</div>
-					</div>
 
-					<div class="clearfix">
-						<div class="iconSmall">
+						<div class="clearfix">
+							<div class="iconSmall">
+								<img src="gfx/PopTotal.png" alt="Gesamtnetzwerk" width="85%">
+							</div>
+							<div class="descriptionSmall">
+								Netzwerkgröße
+							</div>
+							<div class="valueSmall">
+								%var22
+							</div>
+							<div class="iconSmall">
+								<img src="gfx/Score.png" alt="Score" width="85%">
+							</div>
 						</div>
-						<div class="descriptionSmall">
-							<b>GESAMT</b>
+
+						<div class="clearfix">
+							<div class="iconSmall">
+								<img src="gfx/Transactions.png" alt="Transaktionen" width="85%">
+							</div>
+							<div class="descriptionSmall">
+								Transaktionen
+							</div>
+							<div class="valueSmall">
+								%var23
+							</div>
+							<div class="iconSmall">
+								<img src="gfx/Score.png" alt="Score" width="85%">
+							</div>
 						</div>
-						<div class="valueSmall">
-							<b>%var35</b>
+
+						<div class="clearfix">
+							<div class="iconSmall">
+								<img src="gfx/Reputation.png" alt="Reputation" width="85%">
+							</div>
+							<div class="descriptionSmall">
+								Ruf
+							</div>
+							<div class="valueSmall">
+								%var24
+							</div>
+							<div class="iconSmall">
+								<img src="gfx/Score.png" alt="Score" width="85%">
+							</div>
 						</div>
-						<div class="iconSmall">
-							<img src="gfx/Gold.png" alt="Gold" width="85%">
+
+						<div class="clearfix">
+							<div class="iconSmall">
+
+							</div>
+							<div class="descriptionSmall">
+								<b>GESAMT</b>
+							</div>
+							<div class="valueSmall">
+								<b>%var25</b>
+							</div>
+							<div class="iconSmall">
+								<img src="gfx/Score.png" alt="Score" width="85%">
+							</div>
 						</div>
+
 					</div>
 
 				</div>
 
+				<div class="col-lg-4 col-md-6 col-12">
+					<div class="page-divider">
+						<h3>Einnahmen</h3>
+
+						<div class="clearfix">
+							<div class="iconSmall">
+								<img src="gfx/SignUp.png" alt="Anmeldungen" width="85%">
+							</div>
+							<div class="descriptionSmall">
+								Anmeldegebühren
+							</div>
+							<div class="valueSmall">
+								%var26
+							</div>
+							<div class="iconSmall">
+								<img src="gfx/Gold.png" alt="Gold" width="85%">
+							</div>
+						</div>
+
+						<div class="clearfix">
+							<div class="iconSmall">
+								<img src="gfx/Subscription.png" alt="Abonnements" width="85%">
+							</div>
+							<div class="descriptionSmall">
+								Abogebühren
+							</div>
+							<div class="valueSmall">
+								%var27
+							</div>
+							<div class="iconSmall">
+								<img src="gfx/Gold.png" alt="Gold" width="85%">
+							</div>
+						</div>
+
+						<div class="clearfix">
+							<div class="iconSmall">
+								<img src="gfx/Comission.png" alt="Komissionen" width="85%">
+							</div>
+							<div class="descriptionSmall">
+								Komissionen
+							</div>
+							<div class="valueSmall">
+								%var28
+							</div>
+							<div class="iconSmall">
+								<img src="gfx/Gold.png" alt="Gold" width="85%">
+							</div>
+						</div>
+
+						<div class="clearfix">
+							<div class="iconSmall">
+								<img src="gfx/Adverts.png" alt="Komissionen" width="85%">
+							</div>
+							<div class="descriptionSmall">
+								Werbung
+							</div>
+							<div class="valueSmall">
+								%var29
+							</div>
+							<div class="iconSmall">
+								<img src="gfx/Gold.png" alt="Gold" width="85%">
+							</div>
+						</div>
+
+						<div class="clearfix">
+							<div class="iconSmall">
+								<img src="gfx/Insight.png" alt="Datenverkauf" width="85%">
+							</div>
+							<div class="descriptionSmall">
+								Datenverkauf
+							</div>
+							<div class="valueSmall">
+								%var30
+							</div>
+							<div class="iconSmall">
+								<img src="gfx/Gold.png" alt="Gold" width="85%">
+							</div>
+						</div>
+
+						<div class="clearfix">
+							<div class="iconSmall">
+							</div>
+							<div class="descriptionSmall">
+								<b>GESAMT</b>
+							</div>
+							<div class="valueSmall">
+								<b>%var31</b>
+							</div>
+							<div class="iconSmall">
+								<img src="gfx/Gold.png" alt="Gold" width="85%">
+							</div>
+						</div>
+
+					</div>
+
+				</div>
+
+				<div class="col-lg-4 col-md-6 col-12">
+					<div class="page-divider">
+						<h3>Ausgaben</h3>
+
+						<div class="clearfix">
+							<div class="iconSmall">
+								<img src="gfx/Employee.png" alt="Betriebskosten" width="85%">
+							</div>
+							<div class="descriptionSmall">
+								Betriebskosten
+							</div>
+							<div class="valueSmall">
+								%var32
+							</div>
+							<div class="iconSmall">
+								<img src="gfx/Gold.png" alt="Gold" width="85%">
+							</div>
+						</div>
+
+						<div class="clearfix">
+							<div class="iconSmall">
+								<img src="gfx/Tech.png" alt="Entwicklungskosten" width="85%">
+							</div>
+							<div class="descriptionSmall">
+								Entwicklungskosten
+							</div>
+							<div class="valueSmall">
+								%var33
+							</div>
+							<div class="iconSmall">
+								<img src="gfx/Gold.png" alt="Gold" width="85%">
+							</div>
+						</div>
+
+						<div class="clearfix">
+							<div class="iconSmall">
+								<img src="gfx/SignUp.png" alt="Anmeldeboni" width="85%">
+							</div>
+							<div class="descriptionSmall">
+								Anmeldeboni
+							</div>
+							<div class="valueSmall">
+								%var34
+							</div>
+							<div class="iconSmall">
+								<img src="gfx/Gold.png" alt="Gold" width="85%">
+							</div>
+						</div>
+
+						<div class="clearfix">
+							<div class="iconSmall">
+							</div>
+							<div class="descriptionSmall">
+								<b>GESAMT</b>
+							</div>
+							<div class="valueSmall">
+								<b>%var35</b>
+							</div>
+							<div class="iconSmall">
+								<img src="gfx/Gold.png" alt="Gold" width="85%">
+							</div>
+						</div>
+
+					</div>
+				</div>
 				<div class="clearfix">
 					<div class="grid-container page-divider">
-						<div class="tech-pic"><img src="gfx/tech_0.png" class="iconTech"></div>
-						<div class="tech-card">
+						<div id="tech0-pic" class="tech-pic stage-1"><img src="gfx/tech_0.png" class="iconTech"></div>
+						<div id="tech0-card" class="tech-card stage-1">
 							<b>UI/UX Optimierung</b> [50 <img src="gfx/Gold.png" class="iconInline">, 100 <img
 								src="gfx/Code.png" class="iconInline">] <br>
 							+25% intrinsischer Nutzen für Käufer und Verkäufer <br>
 							+5% Wahrscheinlichkeit einer zusätzlichen Transaktion
 						</div>
-						<div class="tech-checkbox"><input type="checkbox" id="techDecision0"></div>
+						<div id="tech0-checkbox" class="tech-checkbox stage-1"><input type="checkbox"></div>
 
-						<div class="tech-pic"><img src="gfx/tech_1.png" class="iconTech"></div>
-						<div class="tech-card">
+						<div id="tech1-pic" class="tech-pic tree-stage2 stage-2"><img src="gfx/tech_1.png"
+								class="iconTech">
+						</div>
+						<div id="tech1-card" class="tech-card stage-2">
 							<b>Seller Analytics</b> [100 <img src="gfx/Code.png" class="iconInline">, 50 <img
 								src="gfx/Insight.png" class="iconInline">] <br>
 							+10% Kompetenz für Verkäufer <br>
 							+10% Matchmaking (+20% mit Machine Learning)
 						</div>
-						<div class="tech-checkbox"><input type="checkbox" id="techDecision1"></div>
+						<div id="tech1-checkbox" class="tech-checkbox stage-2"><input type="checkbox"
+								id="techDecision1"></div>
 
-						<div class="tech-pic"><img src="gfx/tech_2.png" class="iconTech"></div>
-						<div class="tech-card">
-							<b>Advertiser Analytics </b>[100 <img src="gfx/Code.png" class="iconInline">, 50 <img
-								src="gfx/Insight.png" class="iconInline">] <br>
+						<div id="tech2-pic" class="tech-pic tree-stage2 stage-2"><img src="gfx/tech_2.png"
+								class="iconTech">
+						</div>
+						<div id="tech2-card" class="tech-card stage-2">
+							<b>Advertiser Analytics </b>[100 <img src="gfx/Code.png" class="iconInline">, 50
+							<img src="gfx/Insight.png" class="iconInline">] <br>
 							+25% Click-Through Rate bei PPC Werbung (+50% mit Machine Learning)
 						</div>
-						<div class="tech-checkbox"><input type="checkbox" id="techDecision2"></div>
+						<div id="tech2-checkbox" class="tech-checkbox stage-2"><input type="checkbox" id="techDecision2"></div>
 
-						<div class="tech-pic"><img src="gfx/tech_3.png" class="iconTech"></div>
-						<div class="tech-card">
+						<div id="tech3-pic" class="tech-pic tree-stage2 stage-2"><img src="gfx/tech_3.png"
+								class="iconTech">
+						</div>
+						<div id="tech3-card" class="tech-card stage-2">
 							<b>Nudges </b>[35 <img src="gfx/Gold.png" class="iconInline">, 15 <img src="gfx/Insight.png"
 								class="iconInline">] <br>
 							-25% Disnutzen durch Werbung bei Käufern und Verkäufern
 						</div>
-						<div class="tech-checkbox"><input type="checkbox" id="techDecision3"></div>
+						<div id="tech3-checkbox" class="tech-checkbox stage-2"><input type="checkbox" id="techDecision3"></div>
 
-						<div class="tech-pic"><img src="gfx/tech_4.png" class="iconTech"></div>
-						<div class="tech-card">
+						<div id="tech4-pic" class="tech-pic tree-stage2-end stage-2"><img src="gfx/tech_4.png"
+								class="iconTech">
+						</div>
+						<div id="tech4-card" class="tech-card stage-2">
 							<b>Massen AB-Tests </b>[75 <img src="gfx/Gold.png" class="iconInline">, 150 <img
 								src="gfx/Code.png" class="iconInline">] <br>
 							+35% intrinsischer Nutzen für Käufer und Verkäufer <br>
 							+10% Wahrscheinlichkeit einer zusätzlichen Transaktion
 						</div>
-						<div class="tech-checkbox"><input type="checkbox" id="techDecision4"></div>
+						<div id="tech4-checkbox" class="tech-checkbox stage-2"><input type="checkbox" id="techDecision4"></div>
 
-						<div class="tech-pic"><img src="gfx/tech_5.png" class="iconTech"></div>
-						<div class="tech-card">
+						<div id="tech5-pic" class="tech-pic tree-stage3-end stage-3"><img src="gfx/tech_5.png"
+								class="iconTech">
+						</div>
+						<div id="tech5-card" class="tech-card stage-3">
 							<b>Personalisierte UI </b>[250 <img src="gfx/Gold.png" class="iconInline">, 50 <img
 								src="gfx/Insight.png" class="iconInline">] <br>
 							+50% intrinsischer Nutzen für Käufer und Verkäufer <br>
 							+20% Wahrscheinlichkeit einer zusätzlichen Transaktion
 						</div>
-						<div class="tech-checkbox"><input type="checkbox" id="techDecision5"></div>
+						<div id="tech5-checkbox" class="tech-checkbox stage-3"><input type="checkbox" id="techDecision5"></div>
 
-						<div class="tech-pic"><img src="gfx/tech_6.png" class="iconTech"></div>
-						<div class="tech-card">
+						<div id="tech6-pic" class="tech-pic stage-1"><img src="gfx/tech_6.png" class="iconTech"></div>
+						<div id="tech6-card" class="tech-card stage-1">
 							<b>Backend Optimierung </b>[25 <img src="gfx/Gold.png" class="iconInline">, 75 <img
 								src="gfx/Code.png" class="iconInline">] <br>
 							+20% Generierung von Code durch Entwickler
 						</div>
-						<div class="tech-checkbox"><input type="checkbox" id="techDecision6"></div>
+						<div id="tech6-checkbox" class="tech-checkbox stage-1"><input type="checkbox" id="techDecision6"></div>
 
-						<div class="tech-pic"><img src="gfx/tech_7.png" class="iconTech"></div>
-						<div class="tech-card">
+						<div id="tech7-pic" class="tech-pic tree-stage2 stage-2"><img src="gfx/tech_7.png"
+								class="iconTech">
+						</div>
+						<div id="tech7-card" class="tech-card stage-2">
 							<b>Application Programming Interface </b>[100 <img src="gfx/Code.png" class="iconInline">]
 							<br>
 							+30% Generiung von Code durch Entwickler <br>
 							+25 passive Codeerzeugung pro Runde
 						</div>
-						<div class="tech-checkbox"><input type="checkbox" id="techDecision7"></div>
+						<div id="tech7-checkbox" class="tech-checkbox stage-2"><input type="checkbox" id="techDecision7"></div>
 
-						<div class="tech-pic"><img src="gfx/tech_8.png" class="iconTech"></div>
-						<div class="tech-card">
+						<div id="tech8-pic" class="tech-pic tree-stage2 stage-2"><img src="gfx/tech_8.png"
+								class="iconTech">
+						</div>
+						<div id="tech8-card" class="tech-card stage-2">
 							<b>Datenbankoptimierung </b>[35 <img src="gfx/Gold.png" class="iconInline">, 80 <img
 								src="gfx/Code.png" class="iconInline">] <br>
 							Generiert 1 Code pro 10 erhobenen Daten
 						</div>
-						<div class="tech-checkbox"><input type="checkbox" id="techDecision8"></div>
+						<div id="tech8-checkbox" class="tech-checkbox stage-2"><input type="checkbox" id="techDecision8"></div>
 
-						<div class="tech-pic"><img src="gfx/tech_9.png" class="iconTech"></div>
-						<div class="tech-card">
+						<div id="tech9-pic" class="tech-pic tree-stage2 stage-2"><img src="gfx/tech_9.png"
+								class="iconTech">
+						</div>
+						<div id="tech9-card" class="tech-card stage-2">
 							<b>Tracking </b>[100 <img src="gfx/Code.png" class="iconInline">] <br>
 							+20% Erhebung von Daten durch Nutzeraktivität auf der Platform
 						</div>
-						<div class="tech-checkbox"><input type="checkbox" id="techDecision9"></div>
+						<div id="tech9-checkbox" class="tech-checkbox stage-2"><input type="checkbox" id="techDecision9"></div>
 
-						<div class="tech-pic"><img src="gfx/tech_10.png" class="iconTech"></div>
-						<div class="tech-card">
+						<div id="tech10-pic" class="tech-pic tree-stage3-end-line stage-3"><img src="gfx/tech_10.png"
+								class="iconTech">
+						</div>
+						<div id="tech10-card" class="tech-card stage-3">
 							<b>Off-Site Tracking </b>[150 <img src="gfx/Code.png" class="iconInline">] <br>
 							+30% Erhebung von Daten durch Nutzeraktivität auf der Platform
 						</div>
-						<div class="tech-checkbox"><input type="checkbox" id="techDecision10"></div>
+						<div id="tech10-checkbox" class="tech-checkbox stage-3"><input type="checkbox" id="techDecision10">
+						</div>
 
-						<div class="tech-pic"><img src="gfx/tech_11.png" class="iconTech"></div>
-						<div class="tech-card">
+						<div id="tech11-pic" class="tech-pic tree-stage2-end stage-2"><img src="gfx/tech_11.png"
+								class="iconTech">
+						</div>
+						<div id="tech11-card" class="tech-card stage-2">
 							<b>Machine Learning </b>[100 <img src="gfx/Gold.png" class="iconInline">, 100 <img
 								src="gfx/Code.png" class="iconInline">, 100 <img src="gfx/Insight.png"
-								class="iconInline">] <br>
+								class="iconInline">]
+							<br>
 							+30% Gewinnung Daten durch Data Scientists <br>
 							Verstärkt Effekt von Suchfunktion, Recommender und Moderierten Transaktionen
 						</div>
-						<div class="tech-checkbox"><input type="checkbox" id="techDecision11"></div>
+						<div id="tech11-checkbox" class="tech-checkbox stage-2"><input type="checkbox" id="techDecision11"></div>
 
-						<div class="tech-pic"><img src="gfx/tech_12.png" class="iconTech"></div>
-						<div class="tech-card">
-							<b>Content Based Algorithms </b>[300 <img src="gfx/Code.png" class="iconInline">, 150 <img
-								src="gfx/Insight.png" class="iconInline">] <br>
+						<div id="tech12-pic" class="tech-pic tree-stage3 stage-3"><img src="gfx/tech_12.png" class="iconTech">
+						</div>
+						<div id="tech12-card" class="tech-card stage-3">
+							<b>Content Based Algorithms </b>[300 <img src="gfx/Code.png" class="iconInline">,
+							150 <img src="gfx/Insight.png" class="iconInline">] <br>
 							+50% Gewinnung Daten durch Data Scientists
 						</div>
-						<div class="tech-checkbox"><input type="checkbox" id="techDecision12"></div>
+						<div id="tech12-card" class="tech-checkbox stage-3"><input type="checkbox" id="techDecision12"></div>
 
-						<div class="tech-pic"><img src="gfx/tech_13.png" class="iconTech"></div>
-						<div class="tech-card">
-							<b>Collaborative Filtering </b>[300 <img src="gfx/Code.png" class="iconInline">, 150 <img
-								src="gfx/Insight.png" class="iconInline">] <br>
+						<div id="tech13-pic" class="tech-pic tree-stage3-end stage-3"><img src="gfx/tech_13.png"
+								class="iconTech">
+						</div>
+						<div id="tech13-card" class="tech-card stage-3">
+							<b>Collaborative Filtering </b>[300 <img src="gfx/Code.png" class="iconInline">, 150
+							<img src="gfx/Insight.png" class="iconInline">] <br>
 							Erhöht &beta;-Skallierung abhängig von Datenbestand um bis zu 30%
 						</div>
-						<div class="tech-checkbox"><input type="checkbox" id="techDecision13"></div>
+						<div id="tech13-checkbox" class="tech-checkbox stage-3"><input type="checkbox" id="techDecision13"></div>
 
-						<div class="tech-pic"><img src="gfx/tech_14.png" class="iconTech"></div>
-						<div class="tech-card">
-							<b>Optimierte Suchfunktion </b>[35 <img src="gfx/Gold.png" class="iconInline">, 80 <img
-								src="gfx/Code.png" class="iconInline">] <br>
+						<div id="tech14-pic" class="tech-pic stage-1"><img src="gfx/tech_14.png" class="iconTech"></div>
+						<div id="tech14-card" class="tech-card  stage-1">
+							<b>Optimierte Suchfunktion </b>[35 <img src="gfx/Gold.png" class="iconInline">, 80
+							<img src="gfx/Code.png" class="iconInline">] <br>
 							+150% Kapazität Verkäufer <br>
 							+15% Matchmaking
 						</div>
-						<div class="tech-checkbox"><input type="checkbox" id="techDecision14"></div>
+						<div id="tech14-checkbox" class="tech-checkbox  stage-1"><input type="checkbox" id="techDecision14"></div>
 
-						<div class="tech-pic"><img src="gfx/tech_15.png" class="iconTech"></div>
-						<div class="tech-card">
-							<b>Personalisierte Suchfunktion </b>[35 <img src="gfx/Code.png" class="iconInline">] <br>
+						<div id="tech15-pic" class="tech-pic tree-stage2-end stage-2"><img src="gfx/tech_15.png"
+								class="iconTech">
+						</div>
+						<div id="tech15-card" class="tech-card stage-2">
+							<b>Personalisierte Suchfunktion </b>[35 <img src="gfx/Code.png" class="iconInline">]
+							<br>
 							+20% Wahrscheinlichkeit einer zusätzlichen Transaktion
 						</div>
-						<div class="tech-checkbox"><input type="checkbox" id="techDecision15"></div>
+						<div id="tech15-checkbox" class="tech-checkbox stage-2"><input type="checkbox" id="techDecision15"></div>
 
-						<div class="tech-pic"><img src="gfx/tech_16.png" class="iconTech"></div>
-						<div class="tech-card">
+						<div id="tech16-pic" class="tech-pic stage-1"><img src="gfx/tech_16.png" class="iconTech"></div>
+						<div id="tech16-card" class="tech-card stage-1">
 							<b>Recommender </b>[50 <img src="gfx/Code.png" class="iconInline">, 50 <img
 								src="gfx/Insight.png" class="iconInline">] <br>
 							+100% Kapazität Käufer und Verkäufer <br>
 							+10% Matchmaking
 						</div>
-						<div class="tech-checkbox"><input type="checkbox" id="techDecision16"></div>
+						<div id="tech16-checkbox" class="tech-checkbox stage-1"><input type="checkbox" id="techDecision16"></div>
 
-						<div class="tech-pic"><img src="gfx/tech_17.png" class="iconTech"></div>
-						<div class="tech-card">
+						<div id="tech17-pic" class="tech-pic tree-stage2-end stage-2"><img src="gfx/tech_17.png"
+								class="iconTech">
+						</div>
+						<div id="tech17-card" class="tech-card stage-2">
 							<b>Vergleichsansichten </b>[150 <img src="gfx/Code.png" class="iconInline">] <br>
 							Verstärkt Effekte des Bewertungssystem um 50 %
 						</div>
-						<div class="tech-checkbox"><input type="checkbox" id="techDecision17"></div>
+						<div id="tech17-checkbox" class="tech-checkbox stage-2"><input type="checkbox" id="techDecision17"></div>
 
-						<div class="tech-pic"><img src="gfx/tech_18.png" class="iconTech"></div>
-						<div class="tech-card">
+						<div id="tech18-pic" class="tech-pic stage-1"><img src="gfx/tech_18.png" class="iconTech"></div>
+						<div id="tech18-card" class="tech-card stage-1">
 							<b>Bewertungssystem </b>[100 <img src="gfx/Code.png" class="iconInline">] <br>
 							Matchmaking skaliert mit Qualität der Verkäufer
 						</div>
-						<div class="tech-checkbox"><input type="checkbox" id="techDecision18"></div>
+						<div id="tech18-checkbox" class="tech-checkbox stage-1"><input type="checkbox" id="techDecision18"></div>
 
-						<div class="tech-pic"><img src="gfx/tech_19.png" class="iconTech"></div>
-						<div class="tech-card">
-							<b>Natural Language Processing </b>[150 <img src="gfx/Code.png" class="iconInline">] <br>
+						<div id="tech19-pic" class="tech-pic tree-stage2 stage-2"><img src="gfx/tech_19.png" class="iconTech">
+						</div>
+						<div id="tech19-card" class="tech-card stage-2">
+							<b>Natural Language Processing </b>[150 <img src="gfx/Code.png" class="iconInline">]
+							<br>
 							-50% Wahrscheinlichkeit von Fake-Reviews
 						</div>
-						<div class="tech-checkbox"><input type="checkbox" id="techDecision19"></div>
+						<div id="tech19-checkbox" class="tech-checkbox stage-2"><input type="checkbox" id="techDecision19"></div>
 
-						<div class="tech-pic"><img src="gfx/tech_20.png" class="iconTech"></div>
-						<div class="tech-card">
+						<div id="tech20-pic" class="tech-pic tree-stage2-end stage-2"><img src="gfx/tech_20.png"
+								class="iconTech">
+						</div>
+						<div id="tech20-card" class="tech-card stage-2">
 							<b>Reminder </b>[50 <img src="gfx/Gold.png" class="iconInline">, 50 <img src="gfx/Code.png"
 								class="iconInline">] <br>
 							+100% Häufigkeit von Reviews
 						</div>
-						<div class="tech-checkbox"><input type="checkbox" id="techDecision20"></div>
+						<div id="tech20-checkbox" class="tech-checkbox stage-2"><input type="checkbox" id="techDecision20"></div>
 
-						<div class="tech-pic"><img src="gfx/tech_21.png" class="iconTech"></div>
-						<div class="tech-card">
+						<div id="tech21-pic" class="tech-pic stage-1"><img src="gfx/tech_21.png" class="iconTech"></div>
+						<div id="tech21-card" class="tech-card stage-1">
 							<b>Moderierte Transaktion </b>[50 <img src="gfx/Code.png" class="iconInline">] <br>
 							+200% Kapazität Käufer und Verkäufer <br>
 							-10% Disnutzen durch Transaktionsgebühren
 						</div>
-						<div class="tech-checkbox"><input type="checkbox" id="techDecision21"></div>
+						<div id="tech21-checkbox" class="tech-checkbox stage-1"><input type="checkbox" id="techDecision21"></div>
 
-						<div class="tech-pic"><img src="gfx/tech_22.png" class="iconTech"></div>
-						<div class="tech-card">
-							<b>Logistikunterstützung </b>[25 <img src="gfx/Gold.png" class="iconInline">, 75 <img
-								src="gfx/Code.png" class="iconInline">] <br>
+						<div id="tech22-pic" class="tech-pic tree-stage2 stage-2"><img src="gfx/tech_22.png" class="iconTech">
+						</div>
+						<div id="tech22-card" class="tech-card stage-2">
+							<b>Logistikunterstützung </b>[25 <img src="gfx/Gold.png" class="iconInline">, 75
+							<img src="gfx/Code.png" class="iconInline">] <br>
 							+20% Wahrscheinlichkeit einer zusätzlichen Transaktion <br>
 							+1 Zufriedenheit bei jeder erfolgreichen Transaktion
 						</div>
-						<div class="tech-checkbox"><input type="checkbox" id="techDecision22"></div>
+						<div id="tech22-checkbox" class="tech-checkbox stage-2"><input type="checkbox" id="techDecision22"></div>
 
-						<div class="tech-pic"><img src="gfx/tech_23.png" class="iconTech"></div>
-						<div class="tech-card">
+						<div id="tech23-pic" class="tech-pic tree-stage2-end stage-2"><img src="gfx/tech_23.png"
+								class="iconTech">
+						</div>
+						<div id="tech23-card" class="tech-card stage-2">
 							<b>Sepa Mandate </b>[75 <img src="gfx/Gold.png" class="iconInline">, 25 <img
 								src="gfx/Code.png" class="iconInline">] <br>
 							-10% Disnutzen durch Transaktiongebühren
 						</div>
-						<div class="tech-checkbox"><input type="checkbox" id="techDecision23"></div>
+						<div id="tech23-checkbox" class="tech-checkbox stage-2"><input type="checkbox" id="techDecision23"></div>
 
-						<div class="tech-pic"><img src="gfx/tech_24.png" class="iconTech"></div>
-						<div class="tech-card">
+						<div id="tech24-pic" class="tech-pic tree-stage3-end stage-3"><img src="gfx/tech_24.png"
+								class="iconTech">
+						</div>
+						<div id="tech24-card" class="tech-card stage-3">
 							<b>Treuhandsysteme </b>[100 <img src="gfx/Gold.png" class="iconInline">, 200 <img
 								src="gfx/Code.png" class="iconInline">] <br>
 							-10% Disnutzen durch Transaktiongebühren <br>
 							-50% Betrugsfälle
 						</div>
-						<div class="tech-checkbox"><input type="checkbox" id="techDecision24"></div>
+						<div id="tech24-checkbox" class="tech-checkbox stage-3"><input type="checkbox" id="techDecision24"></div>
 
-						<div class="tech-pic"><img src="gfx/tech_25.png" class="iconTech"></div>
-						<div class="tech-card">
+						<div id="tech25-pic" class="tech-pic stage-1"><img src="gfx/tech_25.png" class="iconTech"></div>
+						<div id="tech25-card" class="tech-card stage-1">
 							<b>FAQs und Guidelines </b>[50 <img src="gfx/Gold.png" class="iconInline">] <br>
 							+2 intrinsischer Nutzen für Käufer und Verkäufer
 						</div>
-						<div class="tech-checkbox"><input type="checkbox" id="techDecision25"></div>
+						<div id="tech25-checkbox" class="tech-checkbox stage-1"><input type="checkbox" id="techDecision25"></div>
 
-						<div class="tech-pic"><img src="gfx/tech_26.png" class="iconTech"></div>
-						<div class="tech-card">
+						<div id="tech26-pic" class="tech-pic tree-stage2 stage-2"><img src="gfx/tech_26.png" class="iconTech">
+						</div>
+						<div id="tech26-card" class="tech-card stage-2">
 							<b>Tutorials </b>[75 <img src="gfx/Gold.png" class="iconInline">, 25 <img src="gfx/Code.png"
 								class="iconInline">] <br>
 							+3 intrinsischer Nutzen für Käufer und Verkäufer <br>
 							+5% Kompetenz für Verkäufer
 						</div>
-						<div class="tech-checkbox"><input type="checkbox" id="techDecision26"></div>
+						<div id="tech26-checkbox" class="tech-checkbox stage-2"><input type="checkbox" id="techDecision26"></div>
 
-						<div class="tech-pic"><img src="gfx/tech_27.png" class="iconTech"></div>
-						<div class="tech-card">
+						<div id="tech27-pic" class="tech-pic tree-stage2-end stage-2"><img src="gfx/tech_27.png"
+								class="iconTech">
+						</div>
+						<div id="tech27-card" class="tech-card stage-2">
 							<b>Zertifizierung </b>[150 <img src="gfx/Gold.png" class="iconInline">, 50 <img
 								src="gfx/Code.png" class="iconInline">] <br>
 							Verkäufer ab 0.8 Kompetenz erhalten verstärktes Matchmaking
 						</div>
-						<div class="tech-checkbox"><input type="checkbox" id="techDecision27"></div>
+						<div id="tech27-checkbox" class="tech-checkbox stage-2"><input type="checkbox" id="techDecision27"></div>
 
-						<div class="tech-pic"><img src="gfx/tech_28.png" class="iconTech"></div>
-						<div class="tech-card">
+						<div id="tech28-pic" class="tech-pic tree-stage3-end stage-3"><img src="gfx/tech_28.png"
+								class="iconTech">
+						</div>
+						<div id="tech28-card" class="tech-card stage-3">
 							<b>Community Mitarbeiter </b>[200 <img src="gfx/Gold.png" class="iconInline">] <br>
 							Erhöht &beta;-Skalierung um 15%
 						</div>
-						<div class="tech-checkbox"><input type="checkbox" id="techDecision28"></div>
+						<div id="tech28-checkbox" class="tech-checkbox stage-3"><input type="checkbox" id="techDecision28"></div>
 					</div>
 				</div>
-			</div>
-		</div>
 
+			</div>
 
 	</main>
 
 	<footer>
-		<div class="adjustToCenter">
-			Plattform Simulator |
-			<a href="impressum.html" style="color:#FFFFFF;">Impressum</a> |
-			<a href="dsgvo.html" style="color:#FFFFFF;">Datenschutz</a>
-		</div>
+		Plattform Simulator |&nbsp;
+		<a href="impressum.html" style="color:#FFFFFF;">Impressum</a>&nbsp;|&nbsp;
+		<a href="dsgvo.html" style="color:#FFFFFF;">Datenschutz</a>
 	</footer>
 	<script src="../../js/generator.js"></script>
 </body>

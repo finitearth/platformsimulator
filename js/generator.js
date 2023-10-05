@@ -61,7 +61,7 @@ function generateCode(varNames, varValues) {
 function getTechDecision() {
     let techDecision = [];
     for (let i = 0; i <= 28; i++) {
-        if (document.getElementById("techDecision" + i).checked && !document.getElementById("techDecision" + i).disabled) {
+        if (document.getElementById(`tech{i}-checkbox`).checked && !document.getElementById("techDecision" + i).disabled) {
             techDecision.push(i);
         }
     }
@@ -85,5 +85,21 @@ vars.forEach(v => {
         } else {
             this.classList.add('is-invalid');
         }
+    });
+});
+
+let allObjects = document.querySelectorAll('[id^="tech"]');
+allObjects.forEach((obj) => {
+    let objTitle = obj.id.split("-")[0];
+    let hoverObjects = document.querySelectorAll('[id^="' + objTitle + '"]');
+    obj.addEventListener("mouseover", () => {
+        hoverObjects.forEach((hoverObject) => {
+            hoverObject.classList.add("hovered-stage");
+        });
+    });
+    obj.addEventListener("mouseout", () => {
+        hoverObjects.forEach((hoverObject) => {
+            hoverObject.classList.remove("hovered-stage");
+        });
     });
 });
