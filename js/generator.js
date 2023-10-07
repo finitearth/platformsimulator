@@ -75,17 +75,36 @@ document.getElementById("generate").addEventListener("click", () => {
 
 
 vars.forEach(v => {
-    document.getElementById(v).addEventListener('input', function () {
-        var inputValue = this.value;
-        // if inputVaulue is a number set inputValue to true
-        var isValid = !isNaN(inputValue) && !isNaN(parseFloat(inputValue));
+    // check if v ends with Freemium
+    if (v.endsWith("Freemium")) {
 
-        if (isValid) {
-            this.classList.remove('is-invalid');
-        } else {
-            this.classList.add('is-invalid');
-        }
-    });
+        document.getElementById(v).addEventListener('input', function () {
+            var inputValue = this.value;
+            // if inputVaulue is true or false set inputValue to true
+            var isValid = inputValue == "true" || inputValue == "false";
+
+            if (isValid) {
+                this.classList.remove('is-invalid');
+            } else {
+                this.classList.add('is-invalid');
+            }
+
+
+        });
+    } else {
+
+        document.getElementById(v).addEventListener('input', function () {
+            var inputValue = this.value;
+            // if inputVaulue is a number set inputValue to true
+            var isValid = !isNaN(inputValue) && !isNaN(parseFloat(inputValue));
+
+            if (isValid) {
+                this.classList.remove('is-invalid');
+            } else {
+                this.classList.add('is-invalid');
+            }
+        });
+    }
 });
 
 let allObjects = document.querySelectorAll('[id^="tech"]');

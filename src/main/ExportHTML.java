@@ -157,9 +157,9 @@ public class ExportHTML {
 						line=line.replace("%var11", round(100*player.buyerAdActivityPPC,1)+"%");
 						
 						if(player.buyerFreemium) {
-							line=line.replace("%var12", "JA");
+							line=line.replace("%var12", "true");
 						}else {
-							line=line.replace("%var12", "NEIN");
+							line=line.replace("%var12", "false");
 						}
 
 						line=line.replace("%var13", monetize(player.sellerPriceSign));
@@ -169,9 +169,9 @@ public class ExportHTML {
 						line=line.replace("%var17", round(100*player.sellerAdActivityPPC,1)+"%");
 						
 						if(player.sellerFreemium) {
-							line=line.replace("%var18", "JA");
+							line=line.replace("%var18", "true");
 						}else {
-							line=line.replace("%var18", "NEIN");
+							line=line.replace("%var18", "false");
 						}
 						
 						line=line.replace("%var19", truncate(player.scoreGold));
@@ -274,12 +274,12 @@ public class ExportHTML {
     	try{
         	double dbl = Math.floor(val*Math.pow(10, 2))/Math.pow(10, 2);
         	if(String.valueOf(dbl).split("\\.")[1].length()==1){
-        		return String.valueOf(dbl)+"0 €";
+        		return String.valueOf(dbl)+"0";
         	}else{
-        		return String.valueOf(dbl)+" €";
+        		return String.valueOf(dbl);
         	}
     	}catch(Exception e){
-    		return("- €");
+    		return("0");
     	}
 
     }
