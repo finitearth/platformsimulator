@@ -1,5 +1,6 @@
-Game state loaded. Turn: 8
-Division model.Division@3f91beefPre-Spawn Buyers: 8300
-Division model.Division@3f91beefPre-Spawn Sellers: 8300
-Division model.Division@3f91beefPost-Spawn Buyers: 8600
-Division model.Division@3f91beefPost-Spawn Sellers: 8600
+Game state loaded. Turn: 4
+Division model.Division@238e0d81Pre-Spawn Buyers: 3300
+Division model.Division@238e0d81Pre-Spawn Sellers: 3300
+Division model.Division@238e0d81Post-Spawn Buyers: 5300
+Division model.Division@238e0d81Post-Spawn Sellers: 5300
+Game state saved. Turn: 5

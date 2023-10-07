@@ -139,7 +139,8 @@ public class ExportHTML {
 					
 					// Go through all lines of the template and replace the variable tokens %varXX with the values for the current player
 					while(line!=null) {
-						
+						line=line.replace("Template f&uuml;r Plattform Simulator", player.getName());
+						line=line.replace("Plattform Simulator - Template", player.getName());
 						line=line.replace("Spielername", player.getName());
 					
 						line=line.replace("%var01", round(player.alignmentPrice, 2));
