@@ -211,8 +211,6 @@ public class ExportHTML {
 								line=line.replace("\"techDecision"+t.getId() +"\"", "\"techDecision"+t.getId() +"\" disabled checked");
 							}
 						}
-
-
 						
 						wif.println(line);
 						line=rff.readLine();
