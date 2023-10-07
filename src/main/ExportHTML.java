@@ -152,9 +152,9 @@ public class ExportHTML {
 						
 						line=line.replace("%var07", monetize(player.buyerPriceSign));
 						line=line.replace("%var08", monetize(player.buyerPriceSub));
-						line=line.replace("%var09", monetize(player.buyerPriceAction)+" & "+round(100*player.buyerPriceComission,1)+"%");
-						line=line.replace("%var10", round(100*player.buyerAdActivityCPM,1)+"%");
-						line=line.replace("%var11", round(100*player.buyerAdActivityPPC,1)+"%");
+						line=line.replace("%var09", monetize(player.buyerPriceAction)+", "+monetize(player.buyerPriceComission));
+						line=line.replace("%var10", monetize(player.buyerAdActivityCPM));
+						line=line.replace("%var11",  monetize(player.buyerAdActivityPPC));
 						
 						if(player.buyerFreemium) {
 							line=line.replace("%var12", "true");
@@ -164,9 +164,9 @@ public class ExportHTML {
 
 						line=line.replace("%var13", monetize(player.sellerPriceSign));
 						line=line.replace("%var14", monetize(player.sellerPriceSub));
-						line=line.replace("%var15", monetize(player.sellerPriceAction)+" & "+round(100*player.sellerPriceComission,1)+"%");
-						line=line.replace("%var16", round(100*player.sellerAdActivityCPM,1)+"%");
-						line=line.replace("%var17", round(100*player.sellerAdActivityPPC,1)+"%");
+						line=line.replace("%var15", monetize(player.sellerPriceAction)+", "+monetize(player.sellerPriceComission));
+						line=line.replace("%var16", monetize(player.sellerAdActivityCPM));
+						line=line.replace("%var17", monetize(player.sellerAdActivityPPC));
 						
 						if(player.sellerFreemium) {
 							line=line.replace("%var18", "true");
@@ -247,7 +247,7 @@ public class ExportHTML {
 	 * notation to DIN standard with the "," character as comma.
 	 */
     public String round(double val,int digits){
-    	return(String.valueOf(Math.floor(val*Math.pow(10, digits))/Math.pow(10, digits)).replace(".", ","));
+    	return(String.valueOf(Math.floor(val*Math.pow(10, digits))/Math.pow(10, digits)));
     }
 
 	/**

@@ -21,10 +21,27 @@ let vars = [
     "sellerFreemium"
 ];
 
+let fieldsValid = true;
+
 function generateCode(varNames, varValues) {
+    // check if all fields are valid
+    if (!fieldsValid) {
+        alert("Note: You did not specify all fields correctly.");
+        throw Error("Error 001");
+    }
     let generatedCode = "";
     for (let i = 0; i < varNames.length; i++) {
+        if (varNames[i] == "buyerPriceComission") {
+            generatedCode += `target.buyerPriceComission  = ${varValues[i].split(",")[0]};\n`;
+            generatedCode += `target.buyerPriceAction  = ${varValues[i].split(",")[1]};\n`;
+
+        } else if (varNames[i] == "sellerPriceComission") {
+            generatedCode += `target.sellerPriceComission  = ${varValues[i].split(",")[0]};\n`;
+            generatedCode += `target.sellerPriceAction  = ${varValues[i].split(",")[1]};\n`;
+
+        }else {
         generatedCode += `target.${varNames[i]}  = ${varValues[i]};\n`;
+        }
     }
 
     eventDecision = document.getElementById("eventDecision").value;
@@ -36,7 +53,7 @@ function generateCode(varNames, varValues) {
         generatedCode += `target.eventDecisions[turn]=${eventDecision};\n`;
     } else {
         alert("Note: You did not specify the event decision correctly.");
-        throw Error("Error 001");
+        throw Error("Error 002");
     }
 
     // get the tech decisions
@@ -82,6 +99,7 @@ vars.forEach(v => {
             var inputValue = this.value;
             // if inputVaulue is true or false set inputValue to true
             var isValid = inputValue == "true" || inputValue == "false";
+            fieldsValid = isValid;
 
             if (isValid) {
                 this.classList.remove('is-invalid');
@@ -91,12 +109,28 @@ vars.forEach(v => {
 
 
         });
+    } else if (v.endsWith("Comission")){
+
+        document.getElementById(v).addEventListener('input', function () {
+            var inputValue = this.value;
+            // if inputVaulue consists of two comma seperated double numbers set inputValue to true
+            var isValid = inputValue.match(/^[0-9]+(\.[0-9]+)?,[0-9]+(\.[0-9]+)?$/);
+            fieldsValid = isValid;
+
+            if (isValid) {
+                this.classList.remove('is-invalid');
+            } else {
+                this.classList.add('is-invalid');
+            }
+        });
+
     } else {
 
         document.getElementById(v).addEventListener('input', function () {
             var inputValue = this.value;
             // if inputVaulue is a number set inputValue to true
             var isValid = !isNaN(inputValue) && !isNaN(parseFloat(inputValue));
+            fieldsValid = isValid;
 
             if (isValid) {
                 this.classList.remove('is-invalid');
