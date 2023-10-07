@@ -78,10 +78,11 @@ function generateCode(varNames, varValues) {
 function getTechDecision() {
     let techDecision = [];
     for (let i = 0; i <= 28; i++) {
-        if (document.getElementById(`tech${i}-checkbox`).checked && !document.getElementById(`tech${i}-checkbox`).disabled) {
+        if (document.getElementById(`techDecision${i}`).checked && !document.getElementById(`techDecision${i}`).disabled) {
             techDecision.push(i);
         }
     }
+    console.log(techDecision);
     return techDecision;
 }
 

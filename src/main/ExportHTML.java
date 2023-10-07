@@ -125,7 +125,6 @@ public class ExportHTML {
 	public void exportGameState() {
 
 		try {
-			
 			// Iteration over divisions 
 			for(Division division: GameState.getInstance().getDivision()) {
 				
