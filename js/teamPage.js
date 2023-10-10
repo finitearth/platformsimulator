@@ -1,5 +1,5 @@
 
-// add an event listener to the button with id generate and call the function generateCode
+// generation of email for java code
 let vars = [
     "alignmentPrice",
     "alignmentProduct",
@@ -22,7 +22,6 @@ let vars = [
 ];
 
 let fieldsValid = true;
-
 function generateCode(varNames, varValues) {
     // check if all fields are valid
     if (!fieldsValid) {
@@ -39,8 +38,8 @@ function generateCode(varNames, varValues) {
             generatedCode += `target.sellerPriceComission  = ${varValues[i].split(",")[0]};\n`;
             generatedCode += `target.sellerPriceAction  = ${varValues[i].split(",")[1]};\n`;
 
-        }else {
-        generatedCode += `target.${varNames[i]}  = ${varValues[i]};\n`;
+        } else {
+            generatedCode += `target.${varNames[i]}  = ${varValues[i]};\n`;
         }
     }
 
@@ -62,16 +61,7 @@ function generateCode(varNames, varValues) {
         generatedCode += `target.getTechs().get(${decision}).research();\n`;
     });
 
-    // automatically download the code as txt file
-    let element = document.createElement('a');
-    // element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(generatedCode));
-    // element.setAttribute('download', "generatedCode.txt");
-    element.setAttribute('href', 'mailto:blochinger@blochy.bloch?subject=Entscheidungen&body=' + encodeURIComponent(generatedCode));
-    element.setAttribute('target', "_blank");
-    element.style.display = 'none';
-    document.body.appendChild(element);
-    element.click();
-    document.body.removeChild(element);
+    return generatedCode;
 
 }
 
@@ -88,10 +78,21 @@ function getTechDecision() {
 
 document.getElementById("generate").addEventListener("click", () => {
     let varValues = vars.map((varName) => document.getElementById(varName).value)
-    generateCode(vars, varValues);
+    let code = generateCode(vars, varValues);
+    // automatically download the code as txt file
+    let element = document.createElement('a');
+    // element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(generatedCode));
+    // element.setAttribute('download', "generatedCode.txt");
+    element.setAttribute('href', 'mailto:blochinger@blochy.bloch?subject=Entscheidungen&body=' + encodeURIComponent(code));
+    element.setAttribute('target', "_blank");
+    element.style.display = 'none';
+    document.body.appendChild(element);
+    element.click();
+    document.body.removeChild(element);
 });
 
 
+// infield validation
 vars.forEach(v => {
     // check if v ends with Freemium
     if (v.endsWith("Freemium")) {
@@ -107,10 +108,8 @@ vars.forEach(v => {
             } else {
                 this.classList.add('is-invalid');
             }
-
-
         });
-    } else if (v.endsWith("Comission")){
+    } else if (v.endsWith("Comission")) {
 
         document.getElementById(v).addEventListener('input', function () {
             var inputValue = this.value;
@@ -142,6 +141,7 @@ vars.forEach(v => {
     }
 });
 
+// hover effect for techtree
 let allObjects = document.querySelectorAll('[id^="tech"]');
 allObjects.forEach((obj) => {
     let objTitle = obj.id.split("-")[0];
