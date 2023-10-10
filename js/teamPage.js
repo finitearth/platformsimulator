@@ -83,7 +83,7 @@ document.getElementById("generate").addEventListener("click", () => {
     let element = document.createElement('a');
     // element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(generatedCode));
     // element.setAttribute('download', "generatedCode.txt");
-    element.setAttribute('href', 'mailto:blochinger@blochy.bloch?subject=Entscheidungen&body=' + encodeURIComponent(code));
+    element.setAttribute('href', 'mailto:blochinger@dhbw-ravensburg.de?subject=Entscheidungen&body=' + encodeURIComponent(code));
     element.setAttribute('target', "_blank");
     element.style.display = 'none';
     document.body.appendChild(element);
