@@ -1,4 +1,8 @@
-# Digitale Plattformen - Simulation
+# Digitale Plattformen - Simulation 
+
+<img src="https://github.com/finitearth/platformsimulator/blob/main/htmls/template/gfx/MainLogo.png" alt="Logo" width="150"/>
+
+
 
 ## Versionen
 
