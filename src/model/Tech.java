@@ -12,6 +12,7 @@ public class Tech implements Serializable {
 	
 	Player player;
 	String name;		// name of the technology
+	int id;				// id of the technology
 	boolean active;		// true if this technology is researched for the player given above
 	
 	double gold;		// gold cost of the technology
@@ -19,8 +20,9 @@ public class Tech implements Serializable {
 	double data;		// data cost of the technology
 	double insight;		// insight cost of the technology
 	
-	public Tech(Player parent, String name, double gold, double code, double data, double insight) {
+	public Tech(Player parent, int id, String name, double gold, double code, double data, double insight) {
 		this.player=parent;
+		this.id = id;
 		this.name=name;
 		this.gold=gold;
 		this.code=code;
@@ -114,10 +116,9 @@ public class Tech implements Serializable {
 	public void setInsight(double insight) {
 		this.insight = insight;
 	}
-	
 
+	public int getId() {
+		return id;
+	}
 	
-	
-	
-
 }

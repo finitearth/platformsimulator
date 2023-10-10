@@ -3,13 +3,17 @@ package main;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintStream;
+import java.nio.file.Files;
+import java.nio.file.StandardCopyOption;
 import java.util.LinkedList;
 
 import model.Division;
 import model.GameState;
 import model.Player;
+import model.Tech;
 
 /**
  * The ExportHTML class uses the templates in "/htmls/template/" to represent the current
@@ -121,7 +125,6 @@ public class ExportHTML {
 	public void exportGameState() {
 
 		try {
-			
 			// Iteration over divisions 
 			for(Division division: GameState.getInstance().getDivision()) {
 				
@@ -136,7 +139,8 @@ public class ExportHTML {
 					
 					// Go through all lines of the template and replace the variable tokens %varXX with the values for the current player
 					while(line!=null) {
-						
+						line=line.replace("Template f&uuml;r Plattform Simulator", player.getName());
+						line=line.replace("Plattform Simulator - Template", player.getName());
 						line=line.replace("Spielername", player.getName());
 					
 						line=line.replace("%var01", round(player.alignmentPrice, 2));
@@ -148,26 +152,26 @@ public class ExportHTML {
 						
 						line=line.replace("%var07", monetize(player.buyerPriceSign));
 						line=line.replace("%var08", monetize(player.buyerPriceSub));
-						line=line.replace("%var09", monetize(player.buyerPriceAction)+" & "+round(100*player.buyerPriceComission,1)+"%");
-						line=line.replace("%var10", round(100*player.buyerAdActivityCPM,1)+"%");
-						line=line.replace("%var11", round(100*player.buyerAdActivityPPC,1)+"%");
+						line=line.replace("%var09", monetize(player.buyerPriceAction)+", "+monetize(player.buyerPriceComission));
+						line=line.replace("%var10", monetize(player.buyerAdActivityCPM));
+						line=line.replace("%var11",  monetize(player.buyerAdActivityPPC));
 						
 						if(player.buyerFreemium) {
-							line=line.replace("%var12", "JA");
+							line=line.replace("%var12", "true");
 						}else {
-							line=line.replace("%var12", "NEIN");
+							line=line.replace("%var12", "false");
 						}
 
 						line=line.replace("%var13", monetize(player.sellerPriceSign));
 						line=line.replace("%var14", monetize(player.sellerPriceSub));
-						line=line.replace("%var15", monetize(player.sellerPriceAction)+" & "+round(100*player.sellerPriceComission,1)+"%");
-						line=line.replace("%var16", round(100*player.sellerAdActivityCPM,1)+"%");
-						line=line.replace("%var17", round(100*player.sellerAdActivityPPC,1)+"%");
+						line=line.replace("%var15", monetize(player.sellerPriceAction)+", "+monetize(player.sellerPriceComission));
+						line=line.replace("%var16", monetize(player.sellerAdActivityCPM));
+						line=line.replace("%var17", monetize(player.sellerAdActivityPPC));
 						
 						if(player.sellerFreemium) {
-							line=line.replace("%var18", "JA");
+							line=line.replace("%var18", "true");
 						}else {
-							line=line.replace("%var18", "NEIN");
+							line=line.replace("%var18", "false");
 						}
 						
 						line=line.replace("%var19", truncate(player.scoreGold));
@@ -200,14 +204,31 @@ public class ExportHTML {
 						line=line.replace("%var42", round(100*player.reputation,1)+"%");						
 						line=line.replace("%var43", String.valueOf(player.transactions));		
 						line=line.replace("%var44", String.valueOf(division.getTurn())+"/8");	
+
+						LinkedList<Tech> techs = player.getTechs();
+
+						for (Tech t: techs) {
+							if(t.isActive()) {
+								line=line.replace("\"techDecision"+t.getId() +"\"", "\"techDecision"+t.getId() +"\" disabled checked");
+							}
+						}
 						
 						wif.println(line);
 						line=rff.readLine();
 					}
-					
+
 					rff.close();
 					wif.close();
 					
+				}
+
+				// copy the template.css file to the export folder and overwrite the existing file
+				File source = new File(path + "/htmls/template/template.css");
+				File dest = new File(path + "/htmls/export/template.css");
+				try {
+					Files.copy(source.toPath(), dest.toPath(), StandardCopyOption.REPLACE_EXISTING);
+				} catch (IOException e) {
+					e.printStackTrace();
 				}
 			}
 			
@@ -224,7 +245,7 @@ public class ExportHTML {
 	 * notation to DIN standard with the "," character as comma.
 	 */
     public String round(double val,int digits){
-    	return(String.valueOf(Math.floor(val*Math.pow(10, digits))/Math.pow(10, digits)).replace(".", ","));
+    	return(String.valueOf(Math.floor(val*Math.pow(10, digits))/Math.pow(10, digits)));
     }
 
 	/**
@@ -251,12 +272,12 @@ public class ExportHTML {
     	try{
         	double dbl = Math.floor(val*Math.pow(10, 2))/Math.pow(10, 2);
         	if(String.valueOf(dbl).split("\\.")[1].length()==1){
-        		return String.valueOf(dbl)+"0 €";
+        		return String.valueOf(dbl)+"0";
         	}else{
-        		return String.valueOf(dbl)+" €";
+        		return String.valueOf(dbl);
         	}
     	}catch(Exception e){
-    		return("- €");
+    		return("0");
     	}
 
     }
