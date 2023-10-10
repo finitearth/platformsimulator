@@ -114,7 +114,7 @@ vars.forEach(v => {
         document.getElementById(v).addEventListener('input', function () {
             var inputValue = this.value;
             // if inputVaulue consists of two comma seperated double numbers set inputValue to true
-            var isValid = inputValue.match(/^[0-9]+(\.[0-9]+)?,[0-9]+(\.[0-9]+)?$/);
+            var isValid = inputValue.match(/^[0-9]+(\.[0-9]+)?\s*,\s*[0-9]+(\.[0-9]+)?$/);
             fieldsValid = isValid;
 
             if (isValid) {
