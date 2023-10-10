@@ -25,8 +25,8 @@ let fieldsValid = true;
 function generateCode(varNames, varValues) {
     // check if all fields are valid
     if (!fieldsValid) {
-        alert("Note: You did not specify all fields correctly.");
-        throw Error("Error 001");
+        alert("Huch, da ist wohl ein Feld nicht korrekt ausgefüllt 😖");
+        throw Error("Error 187");
     }
     let generatedCode = "";
     for (let i = 0; i < varNames.length; i++) {
@@ -51,8 +51,8 @@ function generateCode(varNames, varValues) {
         eventDecision = eventDecision.charCodeAt(0) - 96;
         generatedCode += `target.eventDecisions[turn]=${eventDecision};\n`;
     } else {
-        alert("Note: You did not specify the event decision correctly.");
-        throw Error("Error 002");
+        alert("Hoppla, da hast du wohl vergessen eine Entscheidung für das Event zu treffen 🤷🏻‍♀️");
+        throw Error("Error 069");
     }
 
     // get the tech decisions
@@ -72,23 +72,17 @@ function getTechDecision() {
             techDecision.push(i);
         }
     }
-    console.log(techDecision);
     return techDecision;
 }
 
 document.getElementById("generate").addEventListener("click", () => {
     let varValues = vars.map((varName) => document.getElementById(varName).value)
     let code = generateCode(vars, varValues);
-    // automatically download the code as txt file
-    let element = document.createElement('a');
-    // element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(generatedCode));
-    // element.setAttribute('download', "generatedCode.txt");
-    element.setAttribute('href', 'mailto:blochinger@dhbw-ravensburg.de?subject=Entscheidungen&body=' + encodeURIComponent(code));
-    element.setAttribute('target', "_blank");
-    element.style.display = 'none';
-    document.body.appendChild(element);
-    element.click();
-    document.body.removeChild(element);
+
+    let teamname = document.getElementById("teamname").textContent;
+    let round = document.getElementById("round").textContent;
+
+    window.open(`mailto:blochinger@dhbw-ravensburg.de?subject=Entscheidungen von Team ${teamname} in Runde ${round} &body=${encodeURIComponent(code)}`);
 });
 
 
